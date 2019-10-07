@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Built on Frappe. https://frappe.io/ -->
+<html lang='{{ website_languages_request or "en" }}'{% if website_languages_request == "ar"%} dir="rtl"{%- endif %}>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+	<meta name="generator" content="frappe">
+	<meta name="theme-color" content="#38a8df">
+	<link rel="canonical" href="https://capitalcareeypt.com/">
+
+	{% block meta_block %}
+		{% include "templates/includes/meta_block.html" %}
+	{% endblock %}
+
+	<title>{% block title %} {{ title | striptags }} {% endblock %}</title>
+
+	{% block favicon %}
+	<link rel="shortcut icon" href="{{ (favicon or "/assets/frappe/images/favicon.png") | abs_url }}" type="image/x-icon">
+	{% endblock %}
+
+	{%- block head_include %}
+		{{ head_include or "" }}
+	{% endblock -%}
+
+	<!-- Web Fonts  -->
+	<link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700,900|Josefin+Sans:400,400i,600,700&amp;subset=arabic" rel="stylesheet">
+	
+	
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/animate/animate.min.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/simple-line-icons/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/owl.carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/owl.carousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/magnific-popup/magnific-popup.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme-elements.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme-blog.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme-shop.css">
+
+	<!-- Current Page CSS -->
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/rs-plugin/css/settings.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/rs-plugin/css/layers.css">
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/rs-plugin/css/navigation.css">
+	
+	<!-- Demo CSS -->
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/default.css">
+
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/skin-default.css"> 
+
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/custom.css">
+
+	<!-- Head Libs -->
+	<script src="/assets/capital_care_custom_site/vendor/modernizr/modernizr.min.js"></script>
+		
+		
+	<script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function(fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = {{ dev_server }};
+		window.socketio_port = {{ frappe.socketio_port }};
+    </script>
+</head>
+<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {% endif -%} data-spy="scroll" data-target=".wrapper-spy" data-offset="100">
+
+
+
+	{% block content %}
+		{{ content }}
+	{% endblock %}
+
+	
+
+	{% block base_scripts %}
+	<!-- Vendor -->
+	<script src="/assets/capital_care_custom_site/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/jquery.appear/jquery.appear.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/popper/umd/popper.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/common/common.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/jquery.validation/jquery.validate.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/isotope/jquery.isotope.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/vide/jquery.vide.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/vivus/vivus.min.js"></script>
+	
+	<!-- Theme Base, Components and Settings -->
+	<script src="/assets/capital_care_custom_site/js/theme.js"></script>
+	
+	<!-- Current Page Vendor and Views -->
+	<script src="/assets/capital_care_custom_site/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="/assets/capital_care_custom_site/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<!-- Demo -->
+	<script src="/assets/capital_care_custom_site/js/default.js"></script>
+	
+	<!-- Theme Custom -->
+	<script src="/assets/capital_care_custom_site/js/custom.js"></script>
+	
+	<!-- Theme Initialization Files -->
+	<script src="/assets/capital_care_custom_site/js/theme.init.js"></script>
+	
+	<!-- js should be loaded in body! -->
+	<script type="text/javascript" src="/assets/capital_care_custom_site/js/frappe-web.min.js"></script>
+	{% endblock %}
+
+	{%- for link in web_include_js %}
+	<script type="text/javascript" src="{{ link | abs_url }}"></script>
+	{%- endfor -%}
+
+	{%- block script %}{%- endblock %}
+	<!-- csrf_token -->
+	{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+</body>
+</html>
