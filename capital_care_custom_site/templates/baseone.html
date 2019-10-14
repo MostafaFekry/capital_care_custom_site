@@ -17,6 +17,11 @@
 	{% block favicon %}
 	<link rel="shortcut icon" href="{{ (favicon or "/assets/frappe/images/favicon.png") | abs_url }}" type="image/x-icon">
 	{% endblock %}
+	{%- block head -%}
+		{% if head_html is defined -%}
+		{{ head_html or "" }}
+		{%- endif %}
+	{%- endblock -%}
 
 	{%- block head_include %}
 		{{ head_include or "" }}
