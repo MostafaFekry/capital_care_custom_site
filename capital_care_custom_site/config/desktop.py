@@ -6,9 +6,12 @@ def get_data():
 	return [
 		{
 			"module_name": "Capital Care Custom Site",
-			"color": "grey",
-			"icon": "octicon octicon-file-directory",
+			"category": "Places",
+			"label": _("Capital Care Custom Site"),
+			"_label": _("Capital Care Custom Site"),
+			"color": "#16a085",
+			"icon": "octicon octicon-globe",
 			"type": "module",
-			"label": _("Capital Care Custom Site")
+			"description": "Capitl Care site website management, Webpages, webforms, blogs and website theme."
 		}
 	]

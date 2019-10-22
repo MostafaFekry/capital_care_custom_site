@@ -54,6 +54,10 @@ app_license = "MIT"
 # Installation
 # ------------
 
+# website
+update_website_context = "capital_care_custom_site.utils.update_website_context"
+
+
 # before_install = "capital_care_custom_site.install.before_install"
 # after_install = "capital_care_custom_site.install.after_install"
 

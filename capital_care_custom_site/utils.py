@@ -6,8 +6,15 @@ import frappe
 from frappe import throw, msgprint, _
 from frappe.utils import get_request_site_address, encode
 from frappe.model.document import Document
+from capital_care_custom_site.capital_care_custom_site.doctype.website_header_background.website_header_background import get_website_header_background_details
 
-
+def update_website_context(context):
+	website_settings = frappe.get_doc('Capital Care Website Settings')
+	if website_settings.page_header_background:
+		context.update(get_website_header_background_details(website_settings.page_header_background))
+	
+	context["website_social_media_item"] = website_settings.website_social_media_item
+	
 @frappe.whitelist(allow_guest=True)
 def create_lead_for_item_inquiry(lead,mobile,email, subject, message):
 
