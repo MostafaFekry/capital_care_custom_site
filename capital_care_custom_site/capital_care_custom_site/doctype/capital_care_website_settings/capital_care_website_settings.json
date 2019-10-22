@@ -4,10 +4,14 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "sb_01",
+  "slogan",
+  "col_break_01",
+  "contact_us_hotline",
+  "sb_02",
   "page_header_background",
   "social_links_sb",
-  "website_social_media_item",
-  "sb_01"
+  "website_social_media_item"
  ],
  "fields": [
   {
@@ -31,11 +35,30 @@
    "fieldname": "sb_01",
    "fieldtype": "Section Break",
    "label": "Header Details"
+  },
+  {
+   "fieldname": "slogan",
+   "fieldtype": "Data",
+   "label": "Slogan"
+  },
+  {
+   "fieldname": "col_break_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_us_hotline",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "sb_02",
+   "fieldtype": "Section Break",
+   "label": "Default  Header Background"
   }
  ],
  "issingle": 1,
- "modified": "2019-10-22 12:37:47.434205",
- "modified_by": "Administrator",
+ "modified": "2019-10-22 13:31:30.522951",
+ "modified_by": "mostafa.fekry@gmail.com",
  "module": "Capital Care Custom Site",
  "name": "Capital Care Website Settings",
  "owner": "Administrator",
