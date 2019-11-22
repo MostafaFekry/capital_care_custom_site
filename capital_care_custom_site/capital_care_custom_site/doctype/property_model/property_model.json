@@ -1,0 +1,94 @@
+{
+ "autoname": "field:property_model_name",
+ "creation": "2019-11-07 14:46:20.629650",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "property_model_name",
+  "property_model_title",
+  "description",
+  "dimensions_section_section",
+  "property_model_dimensions",
+  "photo_section_section",
+  "property_model_photo"
+ ],
+ "fields": [
+  {
+   "fieldname": "property_model_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "property_model_title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "HTML Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "dimensions_section_section",
+   "fieldtype": "Section Break",
+   "label": "Dimensions Section"
+  },
+  {
+   "fieldname": "property_model_dimensions",
+   "fieldtype": "Table",
+   "label": "Property Model Dimensions",
+   "options": "Property Model Dimensions"
+  },
+  {
+   "fieldname": "photo_section_section",
+   "fieldtype": "Section Break",
+   "label": "Photo Section"
+  },
+  {
+   "fieldname": "property_model_photo",
+   "fieldtype": "Table",
+   "label": "Property Model Photo",
+   "options": "Property Model Photo"
+  }
+ ],
+ "modified": "2019-11-07 15:33:32.655890",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Property Model",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "property_model_name",
+ "track_changes": 1
+}

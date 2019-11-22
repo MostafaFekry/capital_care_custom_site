@@ -1,0 +1,58 @@
+{% macro render_item(item, submenu=False, parent=False) %}
+	{% if item.child_items %}
+
+		{% if parent %}
+		<li class="dropdown">
+			<a class="dropdown-item dropdown-toggle" href="#">
+				{{ item.label }}
+			</a>
+			<ul class="dropdown-menu">
+				<li class="back-button d-none d-lg-block">
+				<a class="dropdown-item">
+					Back
+				</a>
+			</li>
+				{% for child in item.child_items %}
+					{{ render_item(child, True) }}
+				{% endfor %}
+			</ul>
+		</li>
+		{% else %}
+		<li class="dropdown {% if submenu %} dropdown-submenu {% endif %}">
+			<a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				{{ item.label }}
+			</a>
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				{% for child in item.child_items %}
+					{{ render_item(child, True) }}
+			{% endfor %}
+			</ul>
+		</li>
+		{% endif %}
+
+	{% else %}
+
+		{% if parent %}
+		<li>
+			<a class="nav-link {% if (item.url or '')|abs_url == '/'+path %} active{% endif %}" href="{{ (item.url or '')|abs_url }}" {{ item.target or ''}}>
+				{{ item.label }}
+			</a>
+		</li>
+		{% else %}
+		<li><a class="dropdown-item {% if (item.url or '')|abs_url == '/'+path %} active{% endif %}" href="{{ (item.url or '') | abs_url }}"{{ item.target or '' }}>{{ item.label }}</a></li>
+		{% endif %}
+
+	{% endif %}
+{% endmacro %}
+<nav class="collapse">
+{% if top_bar_items -%}
+	<ul class="nav nav-pills" id="mainNav">
+		{%- for item in top_bar_items -%}
+			{% if not item.parent_label-%}
+				{{ render_item(item, parent=True) }}
+			{%- endif -%}
+		{%- endfor %}
+	</ul>
+{%- endif %}			
+</nav>

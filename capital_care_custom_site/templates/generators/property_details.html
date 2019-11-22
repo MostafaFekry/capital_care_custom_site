@@ -1,0 +1,101 @@
+{% extends "templates/web.html" %}
+{% if doc.head_html_details -%}
+{%- block head -%}
+	{{ doc.head_html_details or head_html or "" }}
+{%- endblock -%}
+{%- endif %}
+{% block title %}{{ _(title) }}{% if main_page_title %} | {{ main_page_title  }}{% endif %}{% endblock %}
+{%- block page_container -%}{% endblock %}
+
+{% block topfooter %}
+				<section id="smc" class="section section-no-border bg-color-secondary m-0" style="background-image: url(/assets/capital_care_custom_site/img/white120.png);background-repeat: repeat-y; background-position: right;">
+					{{ _(main_section) or "" }}
+				</section>
+				
+				{% if property_model_items %}
+				<section id="smcmodel" class="section section-no-border bg-color-tertiary m-0 pb-0 section-with-divider pt-0">
+					<div class="divider divider-solid divider-style-4 divider-primary taller divider-icon-lg  appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="1000">
+						<i class="fas fa-chevron-down"></i>
+					</div>
+					<div class="container">
+						<div class="row">
+						<div class="col">
+							<div class="tabs tabs-bottom tabs-center tabs-simple">
+								<ul class="nav nav-tabs">
+									{% for pmi in property_model_items %}
+									<li class="nav-item{% if loop.index == 1 %} active{% endif %}">
+										<a class="nav-link  text-uppercase" href='#tabs{{ pmi.property_model_title|replace(" ", "_") }}' data-toggle="tab">{{ pmi.property_model_title }}</a>
+									</li>
+									{% endfor %}
+									
+								</ul>
+								<div class="tab-content">
+								{% for pmi in property_model_items %}
+									<div class="tab-pane{% if loop.index == 1 %} active{% endif %}" id="tabs{{ pmi.property_model_title|replace(" ", "_") }}">
+										<div class="row">
+											<div class="col-lg-1">
+											</div>
+											<div class="col-lg-5 mb-4 mb-lg-0">
+												<h2 class="custom-h2 font-weight-bold text-color-secondary line-height-5 text-7 mb-4">{{ _(title) }} <strong class=" text-color-quaternary font-weight-thin text-1">({{ pmi.property_model_title }})</strong></h2>
+												{{ pmi.description or "" }}
+												{% if pmi.property_model_dimensions %}
+												<div class="col-lg-10 mb-4 mb-lg-0 tabledetails text-center">
+													<table class="table text-center  table-hover bg-tertiary " >
+														<tbody>
+															{% for dimensions in pmi.property_model_dimensions %}
+															<tr class="{% if dimensions.total %}bg-secondary text-light text-uppercase{% endif %}">
+																{% if dimensions.icon %}<td class="bg-quaternary text-light" ><i class="fas {{ dimensions.icon }}"></i></td>{% endif %}
+																<th {% if not dimensions.icon %} colspan = '2'{% endif %}>{{ dimensions.dimension_name or "" }}</th>
+																{% if dimensions.total %}<th>{{ dimensions.dimension or "" }}</th>{% else %}<td>{{ dimensions.dimension or "" }}</td>{% endif %}
+															</tr>
+															{% endfor %}
+														</tbody>
+													</table>
+												</div>
+												{% endif %}
+											</div>
+											<div class="col-lg-6 mb-4 mb-lg-0 text-center">
+											{% if pmi.property_model_photo %}
+												{% if pmi.property_model_photo|length > 1 %}
+													<div id="loadMoreWrapper" class="row image-gallery sort-destination lightbox" data-sort-id="portfolio" data-total-pages="3" data-plugin-options="{'delegate': 'a.lightbox-portfolio', 'type': 'image', 'gallery': {'enabled': true}}">
+													{% for photo in pmi.property_model_photo %}
+													<div class="isotope-item col-sm-4 col-lg-6 p-0">
+														<div class="image-gallery-item mb-0">
+															<a href="{{ (photo.image_hover or photo.image)|abs_url }}" class="lightbox-portfolio">
+																<span class="thumb-info thumb-info-centered-info thumb-info-no-borders custom-thumb-info-style-1">
+																	<span class="thumb-info-wrapper">
+																		<img src="{{ frappe.utils.quoted(photo.image) }}" class="img-fluid" alt="">
+																		<span class="thumb-info-title">
+																			<span class="thumb-info-inner">{{ photo.title }}</span>
+																			<span class="thumb-info-type">{{ photo.description }}</span>
+																		</span>
+																	</span>
+																</span>
+															</a>
+														</div>
+													</div>
+													{% endfor %}
+													</div>
+												{% else %}
+													{% for photo in pmi.property_model_photo %}
+													<a class="img-thumbnail img-thumbnail-no-borders d-block img-thumbnail-hover-icon lightbox" href="{{ (photo.image_hover or photo.image)|abs_url }}" data-plugin-options="{'type':'image'}">
+														<img class="img-fluid" src="{{ frappe.utils.quoted(photo.image) }}" title="{{ photo.title }}">
+													</a>
+													{% endfor %}
+												{% endif %}
+											{% endif %}
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				{% endif %}
+{% endblock %}
+
+	
+	
+	

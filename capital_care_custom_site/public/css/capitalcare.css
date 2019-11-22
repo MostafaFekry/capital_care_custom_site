@@ -5747,3 +5747,27 @@ html.boxed .body {
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	background-color: #01b1f5;
 }
+.custom-section-sub-title {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.social-icons.social-icons-opacity-light li a {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.divider-left-border {
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+	.divider-left-border {
+	border-left: 0px solid rgba(255, 255, 255, 0.5);
+	}
+
+}
+.page-header.page-header-modern h2 {
+    color: #FFF !important;
+	font-weight: 700 !important;
+	 font-size: 28px;
+}

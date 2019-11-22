@@ -1,0 +1,32 @@
+[
+ {
+  "breadcrumbs": null,
+  "content_type": "HTML",
+  "css": null,
+  "docstatus": 0,
+  "doctype": "Web Page",
+  "enable_comments": 0,
+  "end_date": null,
+  "header": null,
+  "insert_code": 0,
+  "insert_style": 0,
+  "javascript": null,
+  "main_section": "",
+  "main_section_html": "<p class='text-center'><b>Thank you for apply, We will contact you soon.</b></p><br><br><br><br><br><br><br><br><br><br><br><br>",
+  "main_section_md": null,
+  "modified": "2019-11-21 20:30:06.681455",
+  "name": "registration-done",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 1,
+  "route": "registration-done",
+  "show_sidebar": 0,
+  "show_title": 1,
+  "slideshow": null,
+  "start_date": null,
+  "text_align": "Left",
+  "title": "Registration Done",
+  "website_sidebar": null
+ }
+]

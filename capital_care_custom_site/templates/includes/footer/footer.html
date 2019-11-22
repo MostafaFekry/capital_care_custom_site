@@ -1,0 +1,25 @@
+<footer id="footer" class="bg-color-light border-top-0 mt-0">
+	<div class="footer-copyright bg-color-light bg-color-scale-overlay bg-color-scale-overlay-1">
+		<div class="bg-color-scale-overlay-wrapper bg-color-light ">
+			<div class="container py-2">
+				<div class="row py-4">
+					<div class="col-md-12  text-center">
+						{% if website_languages_copyright or copyright %}
+							<p class="text-color-primary">&copy; {{ _(website_languages_copyright or copyright) }}</p>
+						{% endif %}
+					</div>
+					<div class="col-md-12   text-center">
+						<p class='text-color-primary'>Developed By
+							<a href="http://hendazaegypt.com/" target='_blank'>
+								<img src="/assets/capital_care_custom_site/img/hendazalogocolor.png" style='max-height:20px;' class="img-fluid" data-toggle="tooltip" data-placement="top" title="HENDAZA for Investment & Urban Development - ”Specialized in construction & Real Estate Developments” - Cairo, EGYPT.">
+							</a> 
+							<a href="http://eyeworldco.com/" target='_blank'>
+								<img src="/assets/capital_care_custom_site/img/eyeoftheworldlogocolor.png" style='max-height:25px;' class="mt-1 img-fluid" data-toggle="tooltip" data-placement="top" title="Eye of The World - ”Specialized in healthcare facilities management” - Dubai, UAE.">
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

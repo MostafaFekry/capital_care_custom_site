@@ -1,0 +1,37 @@
+{
+ "creation": "2019-11-07 15:35:39.326535",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "property_model",
+  "title"
+ ],
+ "fields": [
+  {
+   "fieldname": "property_model",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Property Model",
+   "options": "Property Model"
+  },
+  {
+   "fetch_from": "property_model.property_model_title",
+   "fieldname": "title",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Title"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-11-07 15:35:39.326535",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Property Model Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

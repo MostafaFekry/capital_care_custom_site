@@ -1,0 +1,168 @@
+{
+ "allow_guest_to_view": 1,
+ "autoname": "project_progress_name",
+ "creation": "2019-11-14 21:38:55.835456",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_progress_name",
+  "light_description",
+  "column_break_3",
+  "starts_on",
+  "ends_on",
+  "section_break_6",
+  "description",
+  "content",
+  "website_section",
+  "published",
+  "route",
+  "column_break_12",
+  "page_header_background",
+  "last_progress_start_on",
+  "project_progress_photos",
+  "project_progress_media",
+  "section_break_8",
+  "head_html_details"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "project_progress_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Progress Name",
+   "reqd": 1,
+   "translatable": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "light_description",
+   "fieldtype": "Data",
+   "label": "Light Description",
+   "translatable": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "starts_on",
+   "fieldtype": "Date",
+   "label": "Starts on",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ends_on",
+   "fieldtype": "Date",
+   "label": "Ends on"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text",
+   "label": "Content"
+  },
+  {
+   "fieldname": "website_section",
+   "fieldtype": "Section Break",
+   "label": "Website"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "page_header_background",
+   "fieldtype": "Link",
+   "label": "Page Header Background",
+   "options": "Website Header Background"
+  },
+  {
+   "fieldname": "project_progress_photos",
+   "fieldtype": "Section Break",
+   "label": "Project Progress Media"
+  },
+  {
+   "fieldname": "project_progress_media",
+   "fieldtype": "Table",
+   "label": "Project Progress Media",
+   "options": "Project Progress Media"
+  },
+  {
+   "fieldname": "last_progress_start_on",
+   "fieldtype": "Date",
+   "label": "Last Progress Start On",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "HTML Header"
+  },
+  {
+   "description": "Added HTML in the &lt;head&gt; section of the web page, primarily used for website verification and SEO",
+   "fieldname": "head_html_details",
+   "fieldtype": "Code",
+   "label": "&lt;head&gt; HTML",
+   "options": "HTML"
+  }
+ ],
+ "has_web_view": 1,
+ "is_published_field": "published",
+ "modified": "2019-11-22 13:26:50.086314",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Project Progress Items",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "project_progress_name",
+ "track_changes": 1
+}

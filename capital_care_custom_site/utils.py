@@ -13,6 +13,9 @@ def update_website_context(context):
 	if website_settings.page_header_background:
 		context.update(get_website_header_background_details(website_settings.page_header_background))
 	
+	context["main_page_title"] = website_settings.main_page_title
+	context["slogan"] = website_settings.slogan
+	context["contact_us_hotline"] = website_settings.contact_us_hotline
 	context["website_social_media_item"] = website_settings.website_social_media_item
 	
 @frappe.whitelist(allow_guest=True)

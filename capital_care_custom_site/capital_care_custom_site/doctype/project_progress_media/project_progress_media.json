@@ -1,0 +1,91 @@
+{
+ "creation": "2019-11-15 10:16:59.216963",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "media_title",
+  "media_type",
+  "column_break_3",
+  "display_on_main_page",
+  "photo_section_section",
+  "media_photo",
+  "column_break_7",
+  "media_photo_hover",
+  "video_section_section",
+  "video_embed_url"
+ ],
+ "fields": [
+  {
+   "fieldname": "media_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Media Title",
+   "reqd": 1
+  },
+  {
+   "default": "Photo",
+   "fieldname": "media_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Media Type",
+   "options": "\nPhoto\nVideo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "display_on_main_page",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Display on Main Page"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "eval:in_list([\"Photo\"], doc.media_type)",
+   "fieldname": "photo_section_section",
+   "fieldtype": "Section Break",
+   "label": "Photo Section"
+  },
+  {
+   "fieldname": "media_photo",
+   "fieldtype": "Attach Image",
+   "label": "Media Photo"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "media_photo_hover",
+   "fieldtype": "Attach Image",
+   "label": "Media Photo Hover"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "eval:in_list([\"Video\"], doc.media_type)",
+   "fieldname": "video_section_section",
+   "fieldtype": "Section Break",
+   "label": "Video Section"
+  },
+  {
+   "fieldname": "video_embed_url",
+   "fieldtype": "Data",
+   "label": "Video Embed URL "
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-11-16 16:42:05.937443",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Project Progress Media",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -37,23 +37,39 @@ def get_data():
 			]
 		},
 		{
-			"label": _("Blog"),
+			"label": _("Pages"),
 			"items": [
 				{
 					"type": "doctype",
-					"name": "Blog Post",
-					"description": _("Single Post (article)."),
+					"name": "Website About Us Settings",
+					"description": _("Settings for About Us Page."),
 					"onboard": 1,
 				},
 				{
 					"type": "doctype",
-					"name": "Blogger",
-					"description": _("A user who posts blogs."),
+					"name": "Website Facilities Settings",
+					"description": _("Settings for Facilities Page."),
 				},
 				{
 					"type": "doctype",
-					"name": "Blog Category",
-					"description": _("Categorize blog posts."),
+					"name": "Website Location Settings",
+					"description": _("Settings for Location Page."),
+				},
+				{
+					"type": "doctype",
+					"name": "Website Media Settings",
+					"description": _("Settings for Media Page."),
+				},
+				{
+					"type": "doctype",
+					"name": "Website Landing Page Setting",
+					"description": _("Settings for Landing Page."),
+				},
+				{
+					"type": "doctype",
+					"name": "Website Contact Us Settings",
+					"description": _("Settings for Contact Us Page."),
+					"onboard": 1,
 				},
 			]
 		},
@@ -78,40 +94,46 @@ def get_data():
 					"name": "Website Social Media",
 					"description": _("List of Website Social Media."),
 				},
+			]
+		},
+		{
+			"label": _("Property"),
+			"items": [
 				{
 					"type": "doctype",
-					"name": "About Us Settings",
-					"description": _("Settings for About Us Page."),
+					"name": "Property Type",
+					"label": _("Property Type"),
 				},
 				{
 					"type": "doctype",
-					"name": "Contact Us Settings",
-					"description": _("Settings for Contact Us Page."),
+					"name": "Property Model",
+					"label": _("Property Model"),
 				},
 			]
 		},
 		{
-			"label": _("Portal"),
+			"label": _("Project Progress"),
 			"items": [
 				{
 					"type": "doctype",
-					"name": "Portal Settings",
-					"label": _("Portal Settings"),
-					"onboard": 1,
-				}
+					"name": "Website Project Progress Settings",
+					"label": _("Website Project Progress Settings"),
+				},
+				{
+					"type": "doctype",
+					"name": "Project Progress Items",
+					"label": _("Project Progress Items"),
+				},
 			]
 		},
 		{
-			"label": _("Knowledge Base"),
+			"label": _("Form"),
 			"items": [
 				{
 					"type": "doctype",
-					"name": "Help Category",
-				},
-				{
-					"type": "doctype",
-					"name": "Help Article",
-				},
+					"name": "Broker Request",
+					"label": _("Broker Request Form"),
+				}	,
 			]
 		},
 

@@ -1,0 +1,131 @@
+{% extends "templates/web.html" %}
+{% if doc.head_html_details -%}
+{%- block head -%}
+	{{ doc.head_html_details or head_html or "" }}
+{%- endblock -%}
+{%- endif %}
+{% block title %}{{ _(title) or "Contact Us" }}{% if main_page_title %} | {{ main_page_title  }}{% endif %}{% endblock %}
+{%- block page_container -%}{% endblock %}
+{% block topfooter %}
+				<section id="mainpage" class="section section-no-border bg-color-tertiary m-0 p-4" style="background-image: url(/assets/capital_care_custom_site/img/white120.png);background-repeat: repeat-y; background-position: right;">
+					<div class="container">							
+						<div class="row justify-content-center">
+							<div class="col-lg-8 text-center py-4">
+								<h2 class="font-weight-bold text-color-secondary line-height-5 text-7 mb-1 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">{{ _(title) or "Contact Us"}}</h2>
+								<div class="divider divider-secondary divider-small divider-small-center">
+									<hr>
+								</div>
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ _(doc.introduction) or "" }}</h4>
+								<div class="row">
+									{% if doc.get({"doctype":"Contact Us Phone Items"}) %}
+									<div class="col-md-6 custom-sm-margin-top">
+										<h4 class="mb-1 text-color-primary">Call Us</h4>
+										{% for d in doc.get({"doctype":"Contact Us Phone Items"}) %}
+										<a href="tel:{{ d.phone_number }}" class="text-decoration-none text-color-quaternary text-2 custom-opacity-font" title="{{ _(d.title) }}">{{ _(d.title) }}: <span class="info text-4">{{ d.phone_number }}</span></a><br>
+										{% endfor %}
+									</div>
+									{% endif %}
+									{% if doc.get({"doctype":"Contact Us Email Items"}) %}
+									<div class="col-md-6 custom-sm-margin-top">
+										<h4 class="mb-2 text-color-primary">E-Mail Us</h4>
+										{% for d in doc.get({"doctype":"Contact Us Email Items"}) %}
+										<a href="mail:{{ d.phone_number }}" class="text-decoration-none" title="E-Mail Us">
+											<span class="custom-call-to-action-2 text-color-quaternary text-2 custom-opacity-font">
+												<span class="info text-4">{{ d.email }}</span>
+											</span>
+										</a><br>
+										{% endfor %}
+									</div>
+									{% endif %}
+								</div>
+								{% if doc.get({"doctype":"Contact Us Address Items"}) %}
+								<div class="row mt-4">
+									{% for d in doc.get({"doctype":"Contact Us Address Items"}) %}
+									<div class="col-md-6 custom-sm-margin-top">
+										<h4 class="mb-1 text-color-primary">{{ _(d.title) }}</h4>
+										<p class=" text-color-quaternary mb-0">{{ _(d.address) }}
+										{% if d.city or d.state %}
+										,<br> {% if d.city %}{{ _(d.city) }}{% endif %}{% if d.state %}, {{ _(d.state)  }}{% endif %}
+										{% endif %}
+										{% if d.country %}
+										,<br> {{ _(d.country) }}.
+										{% endif %}
+										</p>
+										{% if d.google_map_link %}
+										<a href="{{ d.google_map_link }}" target="_blank" class="btn btn-primary bg-color-secondary text-3 font-weight-semibold  text-color-light text-uppercase outline-none m-2" style='border-radius: 30px !important;'>Get Direction <i class="custom-long-arrow-right" aria-hidden="true"></i></a>
+										{% endif %}
+									</div>
+									{% endfor %}
+								</div>
+								{% endif %}
+									
+									
+									
+									
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section id="main" class="section section-no-border bg-color-quaternary m-0 p-4" style="background-image: url(/assets/capital_care_custom_site/img/white120.png);background-repeat: repeat-y; background-position: right;">
+					<div class="container">		
+						<div class="row justify-content-center">
+							<div class="col-lg-8 text-center py-5">
+								<h2 class="font-weight-bold text-color-light line-height-5 text-7 mb-1 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">{{ _(doc.form_title)}}</h2>
+								<div class="divider divider-light divider-small divider-small-center">
+									<hr>
+								</div>
+								{% if doc.form_description %}<p class="text-4 text-color-light mb-2">{{ _(doc.form_description)}}</p>{% endif %}
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-lg-8">
+								<form id="contactForm" class="contact-form custom-contact-form-style-1 pl-4 pr-4" method="POST">
+									<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
+										<strong>Success!</strong> Your message has been sent to us.
+									</div>
+									
+
+									<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
+										<strong>Error!</strong> There was an error sending your message.
+										<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
+									</div>
+									<div class="contact-form-inputs" id="contactform-inputs">
+										<input type="hidden" name="subject" value="Contact Message Received" />
+										<div class="form-row">
+											<div class="form-group col">
+												<input type="text" value=""  maxlength="100" class="form-control" name="name" id="name" placeholder="YOUR NAME" required>
+											</div>
+										</div>
+										<div class="form-row _divider">
+											<div class="form-group col-sm-6">
+												<input type="text" value="" maxlength="100" class="form-control" name="phone" id="phone" placeholder="PHONE" required>											
+											</div>
+											<div class="form-group col-sm-6">
+												<input type="email" value="" maxlength="100" class="form-control" name="email" id="email" placeholder="EMAIL ADDRESS" required>
+											</div>
+										</div>
+										
+										<div class="form-row">
+											<div class="form-group col">
+												<textarea maxlength="5000" rows="4" class="form-control custom-textarea-style" name="message" id="message" placeholder="COMMENT" required></textarea>
+											</div>
+										</div>
+										<div class="form-row text-center">
+											<div class="col">
+												<input type="submit" value="SUBMIT" class="btn btn-primary custom-btn-style-2 text-color-light custom-margin-2 float-center mt-2" data-loading-text="Loading...">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+
+<script>
+	{% include "templates/includes/contact-form.js" %}
+</script>
+			<!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+				{% if google_maps %}<div id="googlemaps" class="custom-google-map p-0 mb-0 pb-0 ">{{ google_maps }}</div>{% endif %}
+{% endblock %}

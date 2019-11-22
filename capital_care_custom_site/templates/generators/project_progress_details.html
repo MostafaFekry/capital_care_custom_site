@@ -1,0 +1,91 @@
+{% extends "templates/web.html" %}
+{% if doc.head_html_details -%}
+{%- block head -%}
+	{{ doc.head_html_details or head_html or "" }}
+{%- endblock -%}
+{%- endif %}
+{% block title %}{{ _(title) }}{% if main_page_title %} | {{ main_page_title  }}{% endif %}{% endblock %}
+{%- block page_container -%}{% endblock %}
+
+{% block topfooter %}
+				<section id="mainpage" class="section section-no-border m-0">
+					<div class="row pb-4 mb-3">
+					{% if project_progress_Photo or project_progress_Video %}
+						<div class="col-lg-8 mb-4 mb-lg-0">
+							<div class="container">
+								<div class="row justify-content-center">
+								{% if project_progress_Video %}
+									<div class="col-lg-12">
+										<div class="owl-carousel owl-theme dots-morphing  nav-inside nav-inside-edge nav-squared nav-with-transparency nav-dark" data-plugin-options="{'items': 1, 'margin': 10, 'nav': true, 'loop': true, 'autoHeight': true}">
+										{% for d in project_progress_Video %}
+											<div class="embed-responsive embed-responsive-16by9 rounded">
+												<iframe frameborder="0" allowfullscreen="" src="{{ d.video_embed_url }}"></iframe>
+											</div>
+										{% endfor %}
+										
+										</div>
+									</div>
+								{% endif %}
+								{% if project_progress_Photo %}
+									<div class="col-lg-12">
+										<div class="lightbox mt-3" data-plugin-options="{'delegate': 'a.lightbox-portfolio', 'type': 'image', 'gallery': {'enabled': true}}">
+											<div class="masonry-loader masonry-loader-showing">
+												<div class="masonry row" data-plugin-masonry data-plugin-options="{'itemSelector': '.masonry-item'}">
+													{% for Photo in project_progress_Photo %}
+													<div class="masonry-item no-default-style col-md-4 p-0">
+														<article class="post">
+															<div class="post-image">
+																<a href="{{ Photo.media_photo_hover or Photo.media_photo }}" class="lightbox-portfolio">
+																	<span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear thumb-info-centered-icons">
+																		<span class="thumb-info-wrapper">
+																			<img src="{{ Photo.media_photo }}" class="img-fluid" alt="">
+																			<span class="thumb-info-action">
+																				<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-search-plus text-dark"></i></span>
+																			</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</article>
+													</div>
+													{% endfor %}
+												</div>
+											</div>
+										</div>
+									</div>
+								{% endif %}
+								</div>
+							</div>
+						</div>
+					{% endif %}
+						<div class="col-lg-4">
+							<div class="container">
+								<div class="row">
+								<!--<aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">-->
+									<div class="overflow-hidden">
+										<h2 class="text-color-dark font-weight-normal text-4 mb-0 pt-1 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300"><strong class="font-weight-extra-bold">{{ _(title) }}</strong></h2>
+									</div>
+									{% if content %}<p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">{{ _(content) }}</p>{% endif %}
+
+									<div class="overflow-hidden">
+										<h2 class="text-color-dark font-weight-normal text-4 mb-0 mt-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="700">{{ _("Progress Details") }}</h2>
+										<ul class="list list-icons list-primary list-borders text-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+											<li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">{{ _("From:") }} </strong> {{ frappe.format_date(progress_starts_on) or progress_starts_on }}</li>
+											{% if progress_ends_on %}<li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">{{ _("To:") }} </strong> {{ frappe.format_date(progress_ends_on) or progress_ends_on }}</li>{% endif %}
+											
+										</ul>
+									</div>
+									
+								<!--</aside>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				
+{% endblock %}
+
+	
+	
+	

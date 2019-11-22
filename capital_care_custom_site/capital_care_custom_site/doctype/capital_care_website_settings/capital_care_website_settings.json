@@ -5,9 +5,12 @@
  "engine": "InnoDB",
  "field_order": [
   "sb_01",
+  "main_page_title",
   "slogan",
   "col_break_01",
   "contact_us_hotline",
+  "home_page_details_section",
+  "slideshow",
   "sb_02",
   "page_header_background",
   "social_links_sb",
@@ -54,11 +57,27 @@
    "fieldname": "sb_02",
    "fieldtype": "Section Break",
    "label": "Default  Header Background"
+  },
+  {
+   "fieldname": "home_page_details_section",
+   "fieldtype": "Section Break",
+   "label": "Home Page Details"
+  },
+  {
+   "fieldname": "slideshow",
+   "fieldtype": "Link",
+   "label": "Slideshow",
+   "options": "Website Slideshow"
+  },
+  {
+   "fieldname": "main_page_title",
+   "fieldtype": "Data",
+   "label": "Main Page Title"
   }
  ],
  "issingle": 1,
- "modified": "2019-10-22 13:31:30.522951",
- "modified_by": "mostafa.fekry@gmail.com",
+ "modified": "2019-11-22 12:46:06.378440",
+ "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Capital Care Website Settings",
  "owner": "Administrator",

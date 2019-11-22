@@ -1,0 +1,90 @@
+{% extends "templates/web.html" %}
+{% if doc.head_html_details -%}
+{%- block head -%}
+	{{ doc.head_html_details or head_html or "" }}
+{%- endblock -%}
+{%- endif %}
+{% block title %}{{ _(title) }}{% if main_page_title %} | {{ main_page_title  }}{% endif %}{% endblock %}
+{%- block page_container -%}{% endblock %}
+
+{% block topfooter %}
+<section id="media" class="section section-no-border bg-color-secondary m-0" style="background-image: url(/assets/capital_care_custom_site/img/white120.png);background-repeat: repeat-y; background-position: right;">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				{{ _(doc.description) or "" }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5 m-3">
+				{% if doc.embed_video_url %}
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item rounded" src="{{ doc.embed_video_url|abs_url }}" width="640" height="360" allowfullscreen></iframe>
+				</div>
+				{% endif %}
+			</div>
+			<div class="col-md-5 m-3">
+				<form id="contactForm" class="contact-form pl-4 pr-4" action="" method="POST">
+					<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
+						<strong>Success!</strong> Your message has been sent to us.
+					</div>
+
+					<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
+						<strong>Error!</strong> There was an error sending your message.
+						<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
+					</div>
+					<div class="contact-form-inputs" id="contactform-inputs">
+
+						<input type="hidden" name="subject" value="Contact Message Received" />
+						<div class="form-row _divider">
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-quaternary">* Full Name :</label>
+								<input type="text" data-msg-required="Please enter your Name." value=""  maxlength="100" class="form-control" name="name" id="name" placeholder="Your Name" required>
+							</div>
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-quaternary">* Mobile No. :</label>
+								<input type="text" data-msg-required="Please enter your Mobile No." value="" maxlength="100" class="form-control" name="phone" id="phone" placeholder="Mobile No." required>											
+							</div>
+						</div>
+						<div class="form-row _divider">
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-quaternary">* Address :</label>
+								<input type="text" data-msg-required="Please enter your Address." value="" maxlength="100" class="form-control" name="address" id="address" placeholder="Address" required>											
+							</div>
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-quaternary">* Email Address :</label>
+								<input type="email" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." value="" maxlength="100" class="form-control" name="email" id="email" placeholder="Email Address" required>
+							</div>
+						</div>
+						<div class="form-row _divider">
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-quaternary">* Job :</label>
+								<input type="text" data-msg-required="Please enter your job." value="" maxlength="100" class="form-control" name="job" id="job" placeholder="Job" required>											
+							</div>
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-quaternary">* Interested in :</label>
+								<select data-msg-required="Please select your interested in." class="form-control" name="interestedin" id="interestedin" required>
+									<option value="">...</option>
+									<option value="Clinic">Clinic</option>
+									<option value="SMC Lab">SMC Lab</option>
+									<option value="Pharmacy">Pharmacy</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col text-center">
+								<input type="submit" value="SUBMIT" class="btn btn-primary custom-btn-style-2 text-color-light custom-margin-2 float-left mt-2" data-loading-text="Loading...">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<script>
+	{% include "templates/includes/loading-form.js" %}
+</script>
+{% endblock %}
+	
+	

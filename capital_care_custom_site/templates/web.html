@@ -1,0 +1,62 @@
+{% extends base_template_path %}
+{% block hero %}{% endblock %}
+
+{% block content %}
+
+
+{% macro container_attributes() %}
+id="page-{{ name or route | e }}" data-path="{{ pathname | e }}" {%- if page_or_generator=="Generator" %}source-type="Generator" data-doctype="{{ doctype }}"{% endif %}
+{% endmacro %}
+<div role="main" class="main"  {{ container_attributes() }}>
+	<section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-5 mb-0"  style='background-image: url({% if header_background_image %}{{ frappe.utils.quoted(header_background_image) | abs_url}}{% else %}"/assets/capital_care_custom_site/img/a1.jpg"{% endif %});'>
+		<div class="container">
+			<div class="col-md-12 align-self-center p-static order-2 text-center">
+				<div class="col-md-12 align-self-center order-1">
+					{% block breadcrumbs %}{% include 'templates/includes/breadcrumbs.html' %}{% endblock %}
+				</div>
+				<h1 class="text-light"><strong>{% block header %}{{ _(title or name or "") }}{% endblock %}</strong></h1>
+				<span class="sub-title text-color-light">{{ _(light_description or " ") }}</span>
+			</div>
+		</div>
+		<div class="page-header-extra-button text-center">
+			<a href="#mainpage" data-hash  data-hash-offset="64" class="btn btn-primary btn-rounded-icon"><i class="fas fa-arrow-down"></i></a>
+		</div>
+	</section>
+	{%- block page_container -%}
+	<div class="container my-4 py-2">
+		<div class="row">
+			<div class="col">
+			<div>
+				<div class="">
+					{% if self.header_actions() %}
+					<div class="page-header-actions-block  pull-right">
+						{% block header_actions %}{% endblock %}
+					</div>
+					{% endif %}
+				</div>
+
+				<div id="mainpage" class="page_content">
+					{%- block page_content -%}{%- endblock -%}
+				</div>
+				
+				<div class="page-footer">
+					{%- block page_footer -%}{%- endblock -%}
+				</div>
+			</div>
+		
+			</div>
+		</div>
+	</div>
+	{%- endblock -%}
+	{%- block topfooter -%}{%- endblock -%}
+	{% block extension %}
+		{% include "templates/includes/footer/footer_extension.html" %}
+	{% endblock %}
+	
+	
+</div>
+{%- block footer -%}
+	{% include "templates/includes/footer/footer.html" %}
+{%- endblock -%}
+
+{% endblock %}

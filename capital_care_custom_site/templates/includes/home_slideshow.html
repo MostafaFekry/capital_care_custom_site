@@ -1,0 +1,42 @@
+{% if slideshow %}
+{% if slides %}
+<div class="slider-container rev_slider_wrapper bg-color-grey-scale-1" style="height: 100vh;">
+		<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'sliderLayout': 'fullscreen', 'delay': 9000, 'gridwidth': 1140, 'gridheight': 800, 'responsiveLevels': [4096,1200,992,500]}">
+			<ul>
+				{% for slide in slides %}
+				<li data-transition="fade">
+					<img src="{{ slide.image }}"  
+						alt=""
+						data-bgposition="center center" 
+						data-bgfit="cover" 
+						data-bgrepeat="no-repeat" 
+						data-kenburns="on"
+						data-duration="9000"
+						data-ease="Linear.easeNone"
+						data-scalestart="115"
+						data-scaleend="100"
+						data-rotatestart="0"
+						data-rotateend="0"
+						data-offsetstart="0 -200"
+						data-offsetend="0 200"
+						data-bgparallax="0"
+						class="rev-slidebg">
+					{% if slide.link_path %}
+					<a class="tp-caption slider-scroll-button slider-scroll-button"
+						data-hash
+						data-hash-offset="0"
+						href="{{ slide.link_path }}"
+						data-x="center"
+						data-y="bottom" data-voffset="['30','30','30','30']"
+						data-start="1600"					 
+						data-transform_in="y:[100%];s:500;"
+						data-transform_out="y:[100%];opacity:0;s:500;"
+						data-mask_in="x:0px;y:0px;" style="z-index: 5;"></a>
+					{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endif %}
+{% endif %}

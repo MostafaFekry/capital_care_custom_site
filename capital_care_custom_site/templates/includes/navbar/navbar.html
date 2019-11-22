@@ -1,0 +1,87 @@
+<div class="sticky-wrapper sticky-wrapper-transparent sticky-wrapper-effect-1 sticky-wrapper-border-bottom" data-plugin-sticky data-plugin-options="{'minWidth': 0, 'stickyStartEffectAt': 100, 'padding': {'top': 0}}">
+	<div class="sticky-body">
+		<div class="container-fluid">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-auto">
+					<div class="py-2">
+						<a class="text-decoration-none ml-2" href="{{ url_prefix }}{{ home_page or "/" }}">
+							{{ brand_html or (frappe.get_hooks("brand_html") or ["Home"])[0] }}
+							{% if slogan %}<span class="text-6 d-sm-none d-none d-lg-inline-flex  d-md-inline-flex mt-2"> {{ slogan or "" }}</span>{% endif %}
+						</a>
+					</div>
+				</div>
+				<div class="col-auto text-right d-flex align-items-center justify-content-end">
+					{% if contact_us_hotline %}
+					<div class="header-row text-color-secondary d-none d-lg-block d-md-block  d-sm-block">
+						<nav class="header-nav-top mr-2">
+							<ul class="nav nav-pills">
+								<li class="nav-item nav-item-left-border">
+									<a class="text-decoration-none" href='tel: {{ contact_us_hotline or "" }}'><span class="ws-nowrap text-6  font-weight-black letter-spacing-minus-1"><i class="fas fa-phone"></i>  {{ contact_us_hotline or "" }}</span></a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					{%- endif %}
+		
+					<button class="hamburguer-btn hamburguer-btn-light hamburguer-btn-sticky-dark" data-set-active="false">
+						<span class="hamburguer">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<header id="header" class="side-header side-header-lg side-header-hide d-flex">
+	<div class="header-body">
+		<div class="header-container container d-flex h-100">
+			<div class="header-column flex-lg-column justify-content-center h-100">
+				<div class="header-row header-row-side-header flex-row h-100 pb-2 mt-4 pt-4">
+					<button class="hamburguer-btn hamburguer-btn-side-header active" data-set-active="false">
+						<span class="close">
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+					<div class="header-row header-row-side-header flex-row h-100 overflow-hidden mb-0 mt-0">
+						<div class="header-nav header-nav-links header-nav-links-side-header header-nav-links-vertical header-nav-links-vertical-slide align-self-center w-100">
+							<div class="header-nav-main header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-4 header-nav-main-sub-effect-1">
+								{% include "templates/includes/navbar/navbar_items.html" %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header-row justify-content-end pb-lg-3">
+					{% if contact_us_hotline %}
+					<ul class="header-extra-info">
+						<li class="m-2">
+							<a class="text-decoration-none" href='tel:{{ contact_us_hotline or "" }}'>
+								<div class="feature-box feature-box-style-2 align-items-center">
+									<div class="feature-box-icon">
+										<i class="fas fa-mobile-alt text-9 p-relative text-color-primary"></i>
+									</div>
+									<div class="feature-box-info pl-0">
+										<p class="pb-0 text-uppercase text-color-quaternary line-height-1 text-2">Hotline</p>
+										<p class="pb-0 text-uppercase text-color-primary font-weight-black letter-spacing-minus-1 line-height-1 text-6">{{ contact_us_hotline or "" }}</p>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					{%- endif %}
+					{% if website_social_media_item %}
+					<ul class="header-social-icons social-icons social-icons-clean">
+					{%- for social_item in website_social_media_item -%}
+						<li class="{{ social_item.social_class }}"><a href="{{ social_item.social_url }}" target="{{ social_item.social_url_target }}" title="{{ social_item.social_name }}"><i class="{{ social_item.social_icon }}"></i></a></li>
+					{%- endfor %}
+					</ul>
+					{%- endif %}
+					<p class="d-none d-lg-block text-1 pt-3">&copy; {{ _(copyright) }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

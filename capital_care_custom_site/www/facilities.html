@@ -1,0 +1,51 @@
+{% extends "templates/web.html" %}
+{% if doc.head_html_details -%}
+{%- block head -%}
+	{{ doc.head_html_details or head_html or "" }}
+{%- endblock -%}
+{%- endif %}
+{% block title %}{{ _(title) }}{% if main_page_title %} | {{ main_page_title  }}{% endif %}{% endblock %}
+{%- block page_container -%}{% endblock %}
+
+{% block topfooter %}
+				<section id="mainpage" class="section section-no-border bg-color-light m-0">
+					<div class="container">
+						<div class="row text-center">
+							<div class="col">
+								<h2 class="font-weight-bold text-color-secondary line-height-5 text-7 mb-1 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">{{ _(title or name or "") }}</h2>
+								<div class="divider divider-secondary divider-small divider-small-center">
+									<hr>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 mb-0">
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ _(doc.description) or "" }}</h4>
+							</div>
+						</div>
+					</div>
+				</section>
+				{% if doc.get({"doctype":"Facilities Details Items"}) %}
+				<section  id="main" class="section section-no-border bg-color-tertiary m-0 py-5">
+					<div class="container">
+						<div class="content-grid">
+							<div class="row content-grid-row text-center featured-boxes featured-boxes-style-6">
+							{% for d in doc.get({"doctype":"Facilities Details Items"}) %}
+								<div class="col-md-3 col-lg-3 col-sm-4 content-grid-item flex-column p-5">
+									<div class="featured-box featured-box-quaternary featured-box-effect-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="{{ loop.index }}00">
+										<div class="box-content">
+										{% if d.icon %}<i class="icon-featured"><img src="{{ d.icon }}" style='max-height:40px;' class="img-fluid" alt=""></i>{% endif %}
+											<h4 class="font-weight-normal text-color-primary text-5 mt-3"><strong class="font-weight-extra-bold">{{ _(d.title) }}</strong></h4>
+											{% if d.description %}<p class="mb-0 text-color-quaternary">{{ _(d.description) }}</p>{% endif %}
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+							</div>
+						</div>
+					</div>	
+				</section>
+				{% endif %}
+{% endblock %}
+	
+	

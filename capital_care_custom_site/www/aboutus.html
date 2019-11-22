@@ -1,0 +1,65 @@
+{% extends "templates/web.html" %}
+{% if doc.head_html_details -%}
+{%- block head -%}
+	{{ doc.head_html_details or head_html or "" }}
+{%- endblock -%}
+{%- endif %}
+{% block title %}{{ _(title) }}{% if main_page_title %} | {{ main_page_title  }}{% endif %}{% endblock %}
+
+{%- block page_container -%}{% endblock %}
+
+{% block topfooter %}
+				<section id="mainpage" class="section section-no-border bg-color-light m-0">
+					<div class="container">
+						<div class="row text-center">
+							<div class="col">
+								<h2 class="font-weight-bold text-color-secondary line-height-5 text-7 mb-1 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">{{ _(title or name or "") }}</h2>
+								<div class="divider divider-secondary divider-small divider-small-center">
+									<hr>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 mb-0">
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ doc.company_introduction or """<p>Some Introduction about your company that you would
+								like your website visitor to know.
+								More people than you think will read your About page.
+								People always like to know who the are doing business with.
+								Be authentic and avoid using jargon like 'value added services' etc.
+								Be sure to update your company history and
+								list of key team members in Website > About Us Settings</p>""" }}</h4>
+							</div>
+						</div>
+					</div>
+				</section>
+				{% if doc.get({"doctype":"About Us Vision Items"}) %}
+				<section class="section bg-color-tertiary border-0 m-0">
+					<div class="container">
+						<div class="row text-center text-md-left mt-4">
+						{% for d in doc.get({"doctype":"About Us Vision Items"}) %}
+							<div class="col-md-4 mb-6 mb-md-0 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="{{ loop.index }}00">
+								<div class="row justify-content-center justify-content-md-start">
+									{% if d.icon %}
+									<div class="col-4">
+										<img class="img-fluid mb-4" src="{{ d.icon }}" alt="">
+									</div>
+									{% endif %}
+									<div class="col-lg-8">
+										<h2 class="font-weight-bold text-color-primary line-height-5 text-7 mb-1">{{ _(d.title) }}</h2>
+										<div class="divider divider-primary divider-small">
+											<hr>
+										</div>
+										<p class="text-color-secondary"><strong>&Prime;{{ _(d.description) }}&Prime;</strong></p>
+										<p class="mb-0">{{ _(d.details) }}</p>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+{% endblock %}
+	
+	
+	

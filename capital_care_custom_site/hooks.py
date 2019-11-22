@@ -128,8 +128,15 @@ update_website_context = "capital_care_custom_site.utils.update_website_context"
 fixtures = [{"dt": "Custom Field", "filters": [["name", "in", [
 		"Lead-custom_interested_in",
 		"Lead-custom_address",
-		"Lead-custom_job"
-	]]]}
+		"Lead-custom_job",
+		"Website Slideshow Item-link_path"
+	]]]},
+    {"dt": "Web Form", "filters": [["name", "like", 
+        "broker-request"
+    ]]},
+    {"dt": "Web Page", "filters": [["name", "like", 
+        "registration-done"
+    ]]}
 	]
 
 

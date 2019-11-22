@@ -1,0 +1,29 @@
+{
+ "creation": "2019-11-02 17:46:32.892275",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "email"
+ ],
+ "fields": [
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-11-02 17:46:32.892275",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Contact Us Email Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

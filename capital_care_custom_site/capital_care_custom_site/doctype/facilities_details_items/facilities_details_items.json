@@ -1,0 +1,45 @@
+{
+ "creation": "2019-11-02 15:55:56.564550",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "description",
+  "icon"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "translatable": 1
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Icon"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-11-02 16:25:18.708266",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Facilities Details Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

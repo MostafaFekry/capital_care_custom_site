@@ -1,0 +1,105 @@
+{
+ "creation": "2019-11-02 16:00:33.177947",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "help",
+  "title",
+  "light_description",
+  "page_header_background",
+  "description",
+  "facilities_details_items_section",
+  "facilities_details_items",
+  "section_break_8",
+  "head_html_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "help",
+   "fieldtype": "HTML",
+   "label": "Help",
+   "options": "<div class=\"alert\">Link for Facilities Page is \"/facilities\"</div>"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "translatable": 1
+  },
+  {
+   "fieldname": "light_description",
+   "fieldtype": "Data",
+   "label": "Light Description",
+   "translatable": 1
+  },
+  {
+   "fieldname": "page_header_background",
+   "fieldtype": "Link",
+   "label": "Page Header Background",
+   "options": "Website Header Background"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description",
+   "translatable": 1
+  },
+  {
+   "fieldname": "facilities_details_items_section",
+   "fieldtype": "Section Break",
+   "label": "Facilities Details Items"
+  },
+  {
+   "fieldname": "facilities_details_items",
+   "fieldtype": "Table",
+   "label": "Facilities Details Items",
+   "options": "Facilities Details Items"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "HTML Header"
+  },
+  {
+   "description": "Added HTML in the &lt;head&gt; section of the web page, primarily used for website verification and SEO",
+   "fieldname": "head_html_details",
+   "fieldtype": "Code",
+   "label": "&lt;head&gt; HTML",
+   "options": "HTML"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2019-11-22 13:06:22.557470",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Website Facilities Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

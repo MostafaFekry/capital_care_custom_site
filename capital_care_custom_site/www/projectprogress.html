@@ -1,0 +1,133 @@
+{% extends "templates/web.html" %}
+{% if doc.head_html_details -%}
+{%- block head -%}
+	{{ doc.head_html_details or head_html or "" }}
+{%- endblock -%}
+{%- endif %}
+{% block title %}{{ _(title) }}{% if main_page_title %} | {{ main_page_title  }}{% endif %}{% endblock %}
+{%- block page_container -%}{% endblock %}
+
+{% block topfooter %}
+				<section id="mainpage" class="section section-no-border bg-color-light m-0">
+					<div class="container">
+						<div class="row text-center">
+							<div class="col">
+								<h2 class="font-weight-bold text-color-secondary line-height-5 text-7 mb-1 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">{{ _(title or name or "") }}</h2>
+								<div class="divider divider-secondary divider-small divider-small-center">
+									<hr>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 mb-0">
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ _(main_section) or "" }}</h4>
+							</div>
+						</div>
+					</div>
+				</section>
+				{% if project_progress_items %}
+				<section  id="main" class="section section-no-border bg-color-tertiary m-0">
+					<div class="container py-2">
+						<div class="row">
+							<div class="col">
+								<div class="blog-posts">
+								
+									<section class="timeline">
+										<div class="timeline-body">
+										{% for d in project_progress_items %}
+											{% if loop.index==1 %}
+											<div class="timeline-date">
+												<h3 class="text-primary font-weight-bold">{{ frappe.format_date(d.starts_on,"YYYY") }}</h3>
+											</div>
+											{% endif %}
+											{% if frappe.format_date(d.last_progress_start_on,"YYYY") != frappe.format_date(d.starts_on,"YYYY") and loop.index !=1 %}
+											<div class="timeline-date">
+												<h3 class="text-primary font-weight-bold">{{ d.year }}</h3>
+											</div>
+											{% endif %}
+								
+											<article class="timeline-box {% if loop.index%2 ==0 %}right{% else %}left{% endif %} post post-medium"  data-appear-animation="fadeIn" data-appear-animation-delay="{{loop.index}}00">
+												<div class="timeline-box-arrow"></div>
+												<div class="p-2">
+													{% if d.project_progress_items_media %}
+													<div class="row mb-2">
+								
+														<div class="col">
+															<div class="post-image">
+																{% if d.project_progress_items_media|length == 1 %}
+																{% for media in d.project_progress_items_media %}
+																	{% if media.media_type == 'Photo' %}
+																	<a href="{{ d.route }}">
+																		<img src="{{ frappe.utils.quoted(media.media_photo) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded" alt="" />
+																	</a>
+																	{% else %}
+																	<div class="embed-responsive embed-responsive-16by9">
+																		<iframe class="embed-responsive-item rounded" src="{{ media.video_embed_url|abs_url }}" width="640" height="360" allowfullscreen></iframe>
+																	</div>
+																	{% endif %}
+																{% endfor %}
+																{% else %}
+																<div class="lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
+																	<div class="row mx-0">
+																	{% for media in d.project_progress_items_media %}
+																		<div class="col-6 col-md-4 p-0">
+																			<a href="{{ (media.media_photo_hover or media.media_photo)|abs_url }}">
+																				<span class="thumb-info thumb-info-no-borders thumb-info-centered-icons">
+																					<span class="thumb-info-wrapper">
+																						<img src="{{ frappe.utils.quoted(media.media_photo) }}" class="img-fluid" alt="" />
+																						<span class="thumb-info-action">
+																							<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-plus text-dark"></i></span>
+																						</span>
+																					</span>
+																				</span>
+																			</a>
+																		</div>
+																	{% endfor %}
+																	</div>
+																</div>
+																{% endif %}
+															</div>
+														</div>
+													</div>
+													{% endif %}
+													<div class="row">
+														<div class="col">
+								
+															<div class="post-content">
+																<h2 class="font-weight-semibold text-5 line-height-4 mt-2 mb-2"><a href="{{ d.route }}">{{ _(d.project_progress_name) }}</a></h2>
+																{% if d.description %}<p>{{ _(d.description) }}</p>{% endif %}
+															</div>
+								
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="post-meta">
+																<span><i class="far fa-calendar-alt"></i> {{ frappe.format_date(d.starts_on) or d.starts_on }} </span><br>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<a href="{{ d.route }}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a>
+														</div>
+													</div>
+												</div>
+											</article>										
+										{% endfor %}
+										</div>
+								
+									</section>
+								
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</section>
+				{% endif %}
+{% endblock %}
+	
+	
+	

@@ -1,0 +1,167 @@
+{
+ "creation": "2019-11-02 17:37:38.573369",
+ "description": "Settings for Contact Us Page",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "help",
+  "introduction_section",
+  "heading",
+  "light_description",
+  "page_header_background",
+  "introduction",
+  "phone_section_section",
+  "contact_us_phone_items",
+  "email_section_section",
+  "contact_us_email_items",
+  "address_section_section",
+  "contact_us_address_items",
+  "form_section_section",
+  "form_title",
+  "form_description",
+  "query_options",
+  "section_break_8",
+  "head_html_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "help",
+   "fieldtype": "HTML",
+   "label": "Help",
+   "options": "<div class=\"alert\">Link for Contact Us Page is \"/contactus\"</div>"
+  },
+  {
+   "fieldname": "introduction_section",
+   "fieldtype": "Section Break",
+   "label": "Introduction"
+  },
+  {
+   "fieldname": "heading",
+   "fieldtype": "Data",
+   "label": "Heading",
+   "translatable": 1
+  },
+  {
+   "fieldname": "light_description",
+   "fieldtype": "Data",
+   "label": "Light Description",
+   "translatable": 1
+  },
+  {
+   "fieldname": "page_header_background",
+   "fieldtype": "Link",
+   "label": "Page Header Background",
+   "options": "Website Header Background"
+  },
+  {
+   "fieldname": "introduction",
+   "fieldtype": "Text Editor",
+   "label": "Introduction"
+  },
+  {
+   "fieldname": "form_section_section",
+   "fieldtype": "Section Break",
+   "label": "Form Section"
+  },
+  {
+   "fieldname": "form_title",
+   "fieldtype": "Data",
+   "label": "Form Title",
+   "translatable": 1
+  },
+  {
+   "fieldname": "form_description",
+   "fieldtype": "Small Text",
+   "label": "Form Description",
+   "translatable": 1
+  },
+  {
+   "description": "Contact options, like \"Sales Query, Support Query\" etc each on a new line or separated by commas.",
+   "fieldname": "query_options",
+   "fieldtype": "Small Text",
+   "label": "Query Options"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "phone_section_section",
+   "fieldtype": "Section Break",
+   "label": "Phone Section"
+  },
+  {
+   "fieldname": "contact_us_phone_items",
+   "fieldtype": "Table",
+   "label": "Contact Us Phone Items",
+   "options": "Contact Us Phone Items"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "email_section_section",
+   "fieldtype": "Section Break",
+   "label": "Email Section"
+  },
+  {
+   "fieldname": "contact_us_email_items",
+   "fieldtype": "Table",
+   "label": "Contact Us Email Items",
+   "options": "Contact Us Email Items"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "address_section_section",
+   "fieldtype": "Section Break",
+   "label": "Address Section"
+  },
+  {
+   "fieldname": "contact_us_address_items",
+   "fieldtype": "Table",
+   "label": "Contact Us Address Items",
+   "options": "Contact Us Address Items"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "HTML Header"
+  },
+  {
+   "description": "Added HTML in the &lt;head&gt; section of the web page, primarily used for website verification and SEO",
+   "fieldname": "head_html_details",
+   "fieldtype": "Code",
+   "label": "&lt;head&gt; HTML",
+   "options": "HTML"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2019-11-22 13:19:19.743329",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Website Contact Us Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
