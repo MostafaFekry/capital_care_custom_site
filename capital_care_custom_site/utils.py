@@ -17,6 +17,8 @@ def update_website_context(context):
 	context["slogan"] = website_settings.slogan
 	context["contact_us_hotline"] = website_settings.contact_us_hotline
 	context["website_social_media_item"] = website_settings.website_social_media_item
+	context["download_brochure_title"] = website_settings.download_brochure_title
+	context["download_brochure_link"] = website_settings.download_brochure_link
 	
 @frappe.whitelist(allow_guest=True)
 def create_lead_for_item_inquiry(lead,mobile,email, subject, message):

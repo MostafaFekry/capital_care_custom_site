@@ -14,7 +14,9 @@
   "sb_02",
   "page_header_background",
   "social_links_sb",
-  "website_social_media_item"
+  "website_social_media_item",
+  "download_brochure_title",
+  "download_brochure_link"
  ],
  "fields": [
   {
@@ -26,7 +28,7 @@
   {
    "fieldname": "social_links_sb",
    "fieldtype": "Section Break",
-   "label": "Social Links"
+   "label": "Footer & Social Links"
   },
   {
    "fieldname": "website_social_media_item",
@@ -73,10 +75,20 @@
    "fieldname": "main_page_title",
    "fieldtype": "Data",
    "label": "Main Page Title"
+  },
+  {
+   "fieldname": "download_brochure_title",
+   "fieldtype": "Data",
+   "label": "Download Brochure Title"
+  },
+  {
+   "fieldname": "download_brochure_link",
+   "fieldtype": "Attach",
+   "label": "Download Brochure Link"
   }
  ],
  "issingle": 1,
- "modified": "2019-11-22 12:46:06.378440",
+ "modified": "2019-12-14 05:38:35.079222",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Capital Care Website Settings",
