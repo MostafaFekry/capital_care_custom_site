@@ -15,6 +15,7 @@
   "route",
   "content_section",
   "main_section",
+  "main_section_ar",
   "model_section_section",
   "property_model_item",
   "section_break_8",
@@ -69,7 +70,7 @@
   {
    "fieldname": "main_section",
    "fieldtype": "HTML Editor",
-   "label": "Main Section"
+   "label": "Main Section (En)"
   },
   {
    "fieldname": "model_section_section",
@@ -94,11 +95,16 @@
    "fieldtype": "Code",
    "label": "&lt;head&gt; HTML",
    "options": "HTML"
+  },
+  {
+   "fieldname": "main_section_ar",
+   "fieldtype": "HTML Editor",
+   "label": "Main Section (Ar)"
   }
  ],
  "has_web_view": 1,
  "is_published_field": "published",
- "modified": "2019-11-22 13:30:17.857846",
+ "modified": "2020-01-01 14:00:50.118140",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Property Type",

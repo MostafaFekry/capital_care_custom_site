@@ -9,6 +9,7 @@
   "light_description",
   "page_header_background",
   "company_introduction",
+  "company_introduction_ar",
   "section_break_2",
   "about_us_vision_items",
   "section_break_8",
@@ -42,8 +43,7 @@
   {
    "fieldname": "company_introduction",
    "fieldtype": "Text Editor",
-   "label": "Company Introduction",
-   "translatable": 1
+   "label": "Company Introduction (En)"
   },
   {
    "fieldname": "section_break_2",
@@ -68,10 +68,15 @@
    "fieldtype": "Code",
    "label": "&lt;head&gt; HTML",
    "options": "HTML"
+  },
+  {
+   "fieldname": "company_introduction_ar",
+   "fieldtype": "Text Editor",
+   "label": "Company Introduction (Ar)"
   }
  ],
  "issingle": 1,
- "modified": "2019-11-22 12:16:18.418070",
+ "modified": "2020-01-01 03:58:50.552557",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Website About Us Settings",

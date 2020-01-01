@@ -65,12 +65,14 @@
   {
    "fieldname": "description",
    "fieldtype": "Small Text",
-   "label": "Description"
+   "label": "Description",
+   "translatable": 1
   },
   {
    "fieldname": "content",
    "fieldtype": "Text",
-   "label": "Content"
+   "label": "Content",
+   "translatable": 1
   },
   {
    "fieldname": "website_section",
@@ -130,7 +132,7 @@
  ],
  "has_web_view": 1,
  "is_published_field": "published",
- "modified": "2019-11-22 13:26:50.086314",
+ "modified": "2020-01-01 17:38:05.682357",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Project Progress Items",

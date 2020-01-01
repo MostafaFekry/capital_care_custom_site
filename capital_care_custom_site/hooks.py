@@ -134,6 +134,8 @@ fixtures = [{"dt": "Custom Field", "filters": [["name", "in", [
     {"dt": "Web Form", "filters": [["name", "like", 
         "broker-request"
     ]]},
+	{"dt": "Translation"},
+    {"dt": "Website Languages"},
     {"dt": "Web Page", "filters": [["name", "like", 
         "registration-done"
     ]]}

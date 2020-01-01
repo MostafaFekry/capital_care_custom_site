@@ -11,9 +11,12 @@
   "light_description",
   "page_header_background",
   "introduction",
+  "introduction_ar",
   "phone_section_section",
+  "phone_title",
   "contact_us_phone_items",
   "email_section_section",
+  "email_title",
   "contact_us_email_items",
   "address_section_section",
   "contact_us_address_items",
@@ -57,7 +60,7 @@
   {
    "fieldname": "introduction",
    "fieldtype": "Text Editor",
-   "label": "Introduction"
+   "label": "Introduction (En)"
   },
   {
    "fieldname": "form_section_section",
@@ -130,10 +133,27 @@
    "fieldtype": "Code",
    "label": "&lt;head&gt; HTML",
    "options": "HTML"
+  },
+  {
+   "fieldname": "introduction_ar",
+   "fieldtype": "Text Editor",
+   "label": "Introduction (Ar)"
+  },
+  {
+   "fieldname": "phone_title",
+   "fieldtype": "Data",
+   "label": "Phone Title",
+   "translatable": 1
+  },
+  {
+   "fieldname": "email_title",
+   "fieldtype": "Data",
+   "label": "Email Title",
+   "translatable": 1
   }
  ],
  "issingle": 1,
- "modified": "2019-11-22 13:19:19.743329",
+ "modified": "2020-01-01 16:19:24.628357",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Website Contact Us Settings",

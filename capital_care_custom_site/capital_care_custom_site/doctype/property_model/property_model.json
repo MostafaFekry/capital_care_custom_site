@@ -8,6 +8,7 @@
   "property_model_name",
   "property_model_title",
   "description",
+  "description_ar",
   "dimensions_section_section",
   "property_model_dimensions",
   "photo_section_section",
@@ -26,12 +27,13 @@
    "fieldname": "property_model_title",
    "fieldtype": "Data",
    "label": "Title",
-   "reqd": 1
+   "reqd": 1,
+   "translatable": 1
   },
   {
    "fieldname": "description",
    "fieldtype": "HTML Editor",
-   "label": "Description"
+   "label": "Description (En)"
   },
   {
    "fieldname": "dimensions_section_section",
@@ -54,9 +56,14 @@
    "fieldtype": "Table",
    "label": "Property Model Photo",
    "options": "Property Model Photo"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "HTML Editor",
+   "label": "Description (Ar)"
   }
  ],
- "modified": "2019-11-07 15:33:32.655890",
+ "modified": "2020-01-01 15:30:26.043941",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Property Model",

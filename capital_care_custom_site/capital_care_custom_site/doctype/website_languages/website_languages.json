@@ -1,0 +1,145 @@
+{
+ "autoname": "field:language",
+ "creation": "2019-12-31 14:54:04.390962",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_01",
+  "language",
+  "language_name",
+  "language_flag",
+  "banner_section",
+  "main_page_title",
+  "hotline_title",
+  "hotline_details",
+  "column_break_7",
+  "slogan",
+  "footer_section",
+  "download_brochure_title",
+  "download_brochure_link",
+  "column_break_10",
+  "copyright",
+  "section_break_16",
+  "developed_by_title",
+  "hendaza_logo_description",
+  "column_break_19",
+  "eye_world_logo_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_01",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Site Language",
+   "options": "Language",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "language.language_name",
+   "fieldname": "language_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Language Name"
+  },
+  {
+   "fetch_from": "language.flag",
+   "fieldname": "language_flag",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Language Flag"
+  },
+  {
+   "fieldname": "banner_section",
+   "fieldtype": "Section Break",
+   "label": "Banner"
+  },
+  {
+   "fieldname": "slogan",
+   "fieldtype": "Code",
+   "label": "Slogan"
+  },
+  {
+   "fieldname": "footer_section",
+   "fieldtype": "Section Break",
+   "label": "Footer"
+  },
+  {
+   "fieldname": "download_brochure_title",
+   "fieldtype": "Data",
+   "label": "Download Brochure Title"
+  },
+  {
+   "fieldname": "download_brochure_link",
+   "fieldtype": "Attach",
+   "label": "Download Brochure Link"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "copyright",
+   "fieldtype": "Data",
+   "label": "Copyright"
+  },
+  {
+   "fieldname": "hendaza_logo_description",
+   "fieldtype": "Code",
+   "label": "Hendaza Logo Description"
+  },
+  {
+   "fieldname": "eye_world_logo_description",
+   "fieldtype": "Code",
+   "label": "Eye World Logo Description"
+  },
+  {
+   "fieldname": "main_page_title",
+   "fieldtype": "Data",
+   "label": "Main Page Title"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hotline_title",
+   "fieldtype": "Data",
+   "label": "Hotline Title"
+  },
+  {
+   "fieldname": "hotline_details",
+   "fieldtype": "Data",
+   "label": "Hotline Details"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "developed_by_title",
+   "fieldtype": "Data",
+   "label": "Developed By Title"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-12-31 22:09:44.274353",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Website Languages",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

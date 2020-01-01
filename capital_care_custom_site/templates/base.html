@@ -29,8 +29,11 @@
 	{% endblock -%}
 
 	<!-- Web Fonts  -->
+	{% if website_languages_request == "ar"%}
 	<link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700,900|Josefin+Sans:400,400i,600,700&amp;subset=arabic" rel="stylesheet">
-	
+	{%- else -%}
+	<link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700,900|Josefin+Sans:400,400i,600,700&amp;subset=arabic" rel="stylesheet">
+	{%- endif %}
 	<link type="text/css" rel="stylesheet" href="/assets/css/frappe-web-b4.css">
 	
 	<!-- Vendor CSS -->
@@ -43,10 +46,10 @@
 	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/magnific-popup/magnific-popup.min.css">
 
 	<!-- Theme CSS -->
-	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme.css">
-	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme-elements.css">
-	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme-blog.css">
-	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/theme-shop.css">
+	<link rel="stylesheet" href='/assets/capital_care_custom_site/css/{% if website_languages_request == "ar" -%}rtl-{%- endif %}theme.css'>
+	<link rel="stylesheet" href='/assets/capital_care_custom_site/css/{% if website_languages_request == "ar" -%}rtl-{%- endif %}theme-elements.css'>
+	<link rel="stylesheet" href='/assets/capital_care_custom_site/css/{% if website_languages_request == "ar" -%}rtl-{%- endif %}theme-blog.css'>
+	<link rel="stylesheet" href='/assets/capital_care_custom_site/css/{% if website_languages_request == "ar" -%}rtl-{%- endif %}theme-shop.css'>
 
 	<!-- Current Page CSS -->
 	<link rel="stylesheet" href="/assets/capital_care_custom_site/vendor/rs-plugin/css/settings.css">
@@ -57,7 +60,7 @@
 	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/skins/default.css"> 
 
 	<!-- Theme Custom CSS -->
-	<link rel="stylesheet" href="/assets/capital_care_custom_site/css/capitalcare.css">
+	<link rel="stylesheet" href='/assets/capital_care_custom_site/css/{% if website_languages_request == "ar" -%}rtl-{%- endif %}capitalcare.css'>
 
 	<!-- Head Libs -->
 	<script src="/assets/capital_care_custom_site/vendor/modernizr/modernizr.min.js"></script>
@@ -73,6 +76,7 @@
 		window.socketio_port = {{ frappe.socketio_port }};
     </script>
 </head>
+
 <body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {% endif -%} data-spy="scroll" data-target=".wrapper-spy" data-offset="100">
 	<div class="body">
 	{%- block navbar -%}

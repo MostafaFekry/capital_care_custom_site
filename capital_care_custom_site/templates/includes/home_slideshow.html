@@ -9,7 +9,8 @@
 						alt=""
 						data-bgposition="center center" 
 						data-bgfit="cover" 
-						data-bgrepeat="no-repeat" 
+						data-bgrepeat="no-repeat"
+						{% if website_languages_request == "en"%}					
 						data-kenburns="on"
 						data-duration="9000"
 						data-ease="Linear.easeNone"
@@ -20,6 +21,7 @@
 						data-offsetstart="0 -200"
 						data-offsetend="0 200"
 						data-bgparallax="0"
+						{%- endif %}	
 						class="rev-slidebg">
 					{% if slide.link_path %}
 					<a class="tp-caption slider-scroll-button slider-scroll-button"

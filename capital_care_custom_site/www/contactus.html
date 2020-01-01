@@ -15,11 +15,16 @@
 								<div class="divider divider-secondary divider-small divider-small-center">
 									<hr>
 								</div>
-								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ _(doc.introduction) or "" }}</h4>
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{% if website_languages_request == "ar" -%}
+								{{ doc.introduction_ar or doc.introduction or "" }}
+								{%- else -%}
+								{{ doc.introduction or "" }}
+								{%- endif %}</h4>
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ _(doc.introduction or "") }}</h4>
 								<div class="row">
 									{% if doc.get({"doctype":"Contact Us Phone Items"}) %}
 									<div class="col-md-6 custom-sm-margin-top">
-										<h4 class="mb-1 text-color-primary">Call Us</h4>
+										<h4 class="mb-1 text-color-primary">{{ _(doc.phone_title or "") }}</h4>
 										{% for d in doc.get({"doctype":"Contact Us Phone Items"}) %}
 										<a href="tel:{{ d.phone_number }}" class="text-decoration-none text-color-quaternary text-2 custom-opacity-font" title="{{ _(d.title) }}">{{ _(d.title) }}: <span class="info text-4">{{ d.phone_number }}</span></a><br>
 										{% endfor %}
@@ -27,7 +32,7 @@
 									{% endif %}
 									{% if doc.get({"doctype":"Contact Us Email Items"}) %}
 									<div class="col-md-6 custom-sm-margin-top">
-										<h4 class="mb-2 text-color-primary">E-Mail Us</h4>
+										<h4 class="mb-2 text-color-primary">{{ _(doc.email_title or "") }}</h4>
 										{% for d in doc.get({"doctype":"Contact Us Email Items"}) %}
 										<a href="mail:{{ d.phone_number }}" class="text-decoration-none" title="E-Mail Us">
 											<span class="custom-call-to-action-2 text-color-quaternary text-2 custom-opacity-font">
@@ -52,7 +57,7 @@
 										{% endif %}
 										</p>
 										{% if d.google_map_link %}
-										<a href="{{ d.google_map_link }}" target="_blank" class="btn btn-primary bg-color-secondary text-3 font-weight-semibold  text-color-light text-uppercase outline-none m-2" style='border-radius: 30px !important;'>Get Direction <i class="custom-long-arrow-right" aria-hidden="true"></i></a>
+										<a href="{{ d.google_map_link }}" target="_blank" class="btn btn-primary bg-color-secondary text-3 font-weight-semibold  text-color-light text-uppercase outline-none m-2" style='border-radius: 30px !important;'>{{ _("Get Direction")  }} <i class="custom-long-arrow-right" aria-hidden="true"></i></a>
 										{% endif %}
 									</div>
 									{% endfor %}
@@ -82,38 +87,38 @@
 							<div class="col-lg-8">
 								<form id="contactForm" class="contact-form custom-contact-form-style-1 pl-4 pr-4" method="POST">
 									<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
-										<strong>Success!</strong> Your message has been sent to us.
+										{{ _("<strong>Success!</strong> Your message has been sent to us.")}}
 									</div>
 									
 
 									<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
-										<strong>Error!</strong> There was an error sending your message.
+										{{ _("<strong>Error!</strong> There was an error sending your message.")}}
 										<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
 									</div>
 									<div class="contact-form-inputs" id="contactform-inputs">
 										<input type="hidden" name="subject" value="Contact Message Received" />
 										<div class="form-row">
 											<div class="form-group col">
-												<input type="text" value=""  maxlength="100" class="form-control" name="name" id="name" placeholder="YOUR NAME" required>
+												<input type="text" value=""  maxlength="100" class="form-control" name="name" id="name" placeholder='{{ _("YOUR NAME")}}' required>
 											</div>
 										</div>
 										<div class="form-row _divider">
 											<div class="form-group col-sm-6">
-												<input type="text" value="" maxlength="100" class="form-control" name="phone" id="phone" placeholder="PHONE" required>											
+												<input type="text" value="" maxlength="100" class="form-control" name="phone" id="phone" placeholder='{{ _("PHONE")}}' required>											
 											</div>
 											<div class="form-group col-sm-6">
-												<input type="email" value="" maxlength="100" class="form-control" name="email" id="email" placeholder="EMAIL ADDRESS" required>
+												<input type="email" value="" maxlength="100" class="form-control" name="email" id="email" placeholder='{{ _("EMAIL ADDRESS")}}' required>
 											</div>
 										</div>
 										
 										<div class="form-row">
 											<div class="form-group col">
-												<textarea maxlength="5000" rows="4" class="form-control custom-textarea-style" name="message" id="message" placeholder="COMMENT" required></textarea>
+												<textarea maxlength="5000" rows="4" class="form-control custom-textarea-style" name="message" id="message" placeholder='{{ _("COMMENT")}}' required></textarea>
 											</div>
 										</div>
 										<div class="form-row text-center">
 											<div class="col">
-												<input type="submit" value="SUBMIT" class="btn btn-primary custom-btn-style-2 text-color-light custom-margin-2 float-center mt-2" data-loading-text="Loading...">
+												<input type="submit" value='{{ _("SUBMIT")}}' class="btn btn-primary custom-btn-style-2 text-color-light custom-margin-2 float-center mt-2" data-loading-text='{{ _("Loading...")}}'>
 											</div>
 										</div>
 									</div>

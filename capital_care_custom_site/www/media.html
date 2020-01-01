@@ -20,7 +20,11 @@
 						</div>
 						<div class="row">
 							<div class="col-lg-12 mb-0">
-								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ _(doc.description) or "" }}</h4>
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{% if website_languages_request == "ar" -%}
+								{{ doc.description_ar or doc.description or "" }}
+								{%- else -%}
+								{{ doc.description or "" }}
+								{%- endif %}</h4>
 							</div>
 						</div>
 					</div>

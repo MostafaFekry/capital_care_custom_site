@@ -9,6 +9,7 @@
   "light_description",
   "page_header_background",
   "description",
+  "description_ar",
   "media_details_items_section",
   "media_details_items",
   "section_break_8",
@@ -24,7 +25,8 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title"
+   "label": "Title",
+   "translatable": 1
   },
   {
    "fieldname": "light_description",
@@ -41,7 +43,7 @@
   {
    "fieldname": "description",
    "fieldtype": "Text Editor",
-   "label": "Description"
+   "label": "Description (En)"
   },
   {
    "fieldname": "media_details_items_section",
@@ -66,10 +68,15 @@
    "fieldtype": "Code",
    "label": "&lt;head&gt; HTML",
    "options": "HTML"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Text Editor",
+   "label": "Description (Ar)"
   }
  ],
  "issingle": 1,
- "modified": "2019-11-22 13:10:05.813798",
+ "modified": "2020-01-01 20:47:40.070901",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Website Media Settings",

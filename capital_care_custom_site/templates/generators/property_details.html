@@ -9,7 +9,11 @@
 
 {% block topfooter %}
 				<section id="smc" class="section section-no-border bg-color-secondary m-0" style="background-image: url(/assets/capital_care_custom_site/img/white120.png);background-repeat: repeat-y; background-position: right;">
-					{{ _(main_section) or "" }}
+					{% if website_languages_request == "ar" -%}
+					{{ main_section_ar or main_section or "" }}
+					{%- else -%}
+					{{ main_section or "" }}
+					{%- endif %}
 				</section>
 				
 				{% if property_model_items %}
@@ -24,7 +28,7 @@
 								<ul class="nav nav-tabs">
 									{% for pmi in property_model_items %}
 									<li class="nav-item{% if loop.index == 1 %} active{% endif %}">
-										<a class="nav-link  text-uppercase" href='#tabs{{ pmi.property_model_title|replace(" ", "_") }}' data-toggle="tab">{{ pmi.property_model_title }}</a>
+										<a class="nav-link  text-uppercase" href='#tabs{{ pmi.property_model_title|replace(" ", "_") }}' data-toggle="tab">{{ _(pmi.property_model_title) }}</a>
 									</li>
 									{% endfor %}
 									
@@ -36,8 +40,13 @@
 											<div class="col-lg-1">
 											</div>
 											<div class="col-lg-5 mb-4 mb-lg-0">
-												<h2 class="custom-h2 font-weight-bold text-color-secondary line-height-5 text-7 mb-4">{{ _(title) }} <strong class=" text-color-quaternary font-weight-thin text-1">({{ pmi.property_model_title }})</strong></h2>
+												<h2 class="custom-h2 font-weight-bold text-color-secondary line-height-5 text-7 mb-4">{{ _(title) }} <strong class=" text-color-quaternary font-weight-thin text-1">({{ _(pmi.property_model_title) }})</strong></h2>
+												{% if website_languages_request == "ar" -%}
+												{{ pmi.description_ar or pmi.description or "" }}
+												{%- else -%}
 												{{ pmi.description or "" }}
+												{%- endif %}
+												
 												{% if pmi.property_model_dimensions %}
 												<div class="col-lg-10 mb-4 mb-lg-0 tabledetails text-center">
 													<table class="table text-center  table-hover bg-tertiary " >
@@ -45,8 +54,8 @@
 															{% for dimensions in pmi.property_model_dimensions %}
 															<tr class="{% if dimensions.total %}bg-secondary text-light text-uppercase{% endif %}">
 																{% if dimensions.icon %}<td class="bg-quaternary text-light" ><i class="fas {{ dimensions.icon }}"></i></td>{% endif %}
-																<th {% if not dimensions.icon %} colspan = '2'{% endif %}>{{ dimensions.dimension_name or "" }}</th>
-																{% if dimensions.total %}<th>{{ dimensions.dimension or "" }}</th>{% else %}<td>{{ dimensions.dimension or "" }}</td>{% endif %}
+																<th {% if not dimensions.icon %} colspan = '2'{% endif %}>{{ _(dimensions.dimension_name or "") }}</th>
+																{% if dimensions.total %}<th>{{ _(dimensions.dimension or "") }}</th>{% else %}<td>{{ _(dimensions.dimension or "") }}</td>{% endif %}
 															</tr>
 															{% endfor %}
 														</tbody>
@@ -66,8 +75,8 @@
 																	<span class="thumb-info-wrapper">
 																		<img src="{{ frappe.utils.quoted(photo.image) }}" class="img-fluid" alt="">
 																		<span class="thumb-info-title">
-																			<span class="thumb-info-inner">{{ photo.title }}</span>
-																			<span class="thumb-info-type">{{ photo.description }}</span>
+																			<span class="thumb-info-inner">{{ _(photo.title or "") }}</span>
+																			<span class="thumb-info-type">{{ _(photo.description or "") }}</span>
 																		</span>
 																	</span>
 																</span>
@@ -79,7 +88,7 @@
 												{% else %}
 													{% for photo in pmi.property_model_photo %}
 													<a class="img-thumbnail img-thumbnail-no-borders d-block img-thumbnail-hover-icon lightbox" href="{{ (photo.image_hover or photo.image)|abs_url }}" data-plugin-options="{'type':'image'}">
-														<img class="img-fluid" src="{{ frappe.utils.quoted(photo.image) }}" title="{{ photo.title }}">
+														<img class="img-fluid" src="{{ frappe.utils.quoted(photo.image) }}" title="{{ _(photo.title or "") }}">
 													</a>
 													{% endfor %}
 												{% endif %}

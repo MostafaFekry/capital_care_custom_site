@@ -17,13 +17,15 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Title",
-   "reqd": 1
+   "reqd": 1,
+   "translatable": 1
   },
   {
    "fieldname": "description",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Description"
+   "label": "Description",
+   "translatable": 1
   },
   {
    "fieldname": "column_break_3",
@@ -42,11 +44,12 @@
    "fieldname": "details",
    "fieldtype": "Text",
    "in_list_view": 1,
-   "label": "Details"
+   "label": "Details",
+   "translatable": 1
   }
  ],
  "istable": 1,
- "modified": "2019-11-02 14:34:32.862327",
+ "modified": "2020-01-01 04:07:58.025973",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "About Us Vision Items",

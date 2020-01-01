@@ -9,6 +9,7 @@
   "light_description",
   "page_header_background",
   "description",
+  "description_ar",
   "image",
   "image_large",
   "section_break_8",
@@ -42,8 +43,7 @@
   {
    "fieldname": "description",
    "fieldtype": "Text Editor",
-   "label": "Description",
-   "translatable": 1
+   "label": "Description (En)"
   },
   {
    "fieldname": "image",
@@ -67,10 +67,15 @@
    "fieldtype": "Code",
    "label": "&lt;head&gt; HTML",
    "options": "HTML"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Text Editor",
+   "label": "Description (Ar)"
   }
  ],
  "issingle": 1,
- "modified": "2019-11-22 13:13:04.086746",
+ "modified": "2020-01-01 13:43:44.216099",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Website Location Settings",

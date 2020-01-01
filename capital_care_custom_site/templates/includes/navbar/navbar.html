@@ -11,17 +11,22 @@
 					</div>
 				</div>
 				<div class="col-auto text-right d-flex align-items-center justify-content-end">
-					{% if contact_us_hotline %}
+					
 					<div class="header-row text-color-secondary d-none d-lg-block d-md-block  d-sm-block">
 						<nav class="header-nav-top mr-2">
 							<ul class="nav nav-pills">
+								{% if enable_multilanguage_support and display_language_picker_in_top_bar -%}
+									{% include "templates/includes/navbar/weblanguage.html" %}
+								{%- endif %}
+								{% if hotline_details %}
 								<li class="nav-item nav-item-left-border">
-									<a class="text-decoration-none" href='tel: {{ contact_us_hotline or "" }}'><span class="ws-nowrap text-6  font-weight-black letter-spacing-minus-1"><i class="fas fa-phone"></i>  {{ contact_us_hotline or "" }}</span></a>
+									<a class="text-decoration-none" href='tel: {{ hotline_details or "" }}'><span class="ws-nowrap text-6  font-weight-black letter-spacing-minus-1"><i class="fas fa-phone"></i>  {{ hotline_details or "" }}</span></a>
 								</li>
+								{%- endif %}
 							</ul>
 						</nav>
 					</div>
-					{%- endif %}
+					
 		
 					<button class="hamburguer-btn hamburguer-btn-light hamburguer-btn-sticky-dark" data-set-active="false">
 						<span class="hamburguer">
@@ -55,17 +60,17 @@
 					</div>
 				</div>
 				<div class="header-row justify-content-end pb-lg-3">
-					{% if contact_us_hotline %}
+					{% if hotline_details %}
 					<ul class="header-extra-info">
 						<li class="m-2">
-							<a class="text-decoration-none" href='tel:{{ contact_us_hotline or "" }}'>
+							<a class="text-decoration-none" href='tel:{{ hotline_details or "" }}'>
 								<div class="feature-box feature-box-style-2 align-items-center">
 									<div class="feature-box-icon">
 										<i class="fas fa-mobile-alt text-9 p-relative text-color-primary"></i>
 									</div>
 									<div class="feature-box-info pl-0">
-										<p class="pb-0 text-uppercase text-color-quaternary line-height-1 text-2">Hotline</p>
-										<p class="pb-0 text-uppercase text-color-primary font-weight-black letter-spacing-minus-1 line-height-1 text-6">{{ contact_us_hotline or "" }}</p>
+										<p class="pb-0 text-uppercase text-color-quaternary line-height-1 text-2">{{ hotline_title or "" }}</p>
+										<p class="pb-0 text-uppercase text-color-primary font-weight-black letter-spacing-minus-1 line-height-1 text-6">{{ hotline_details or "" }}</p>
 									</div>
 								</div>
 							</a>
@@ -79,7 +84,7 @@
 					{%- endfor %}
 					</ul>
 					{%- endif %}
-					<p class="d-none d-lg-block text-1 pt-3">&copy; {{ _(copyright) }}</p>
+					<p class="d-none d-lg-block text-1 pt-3">&copy; {{ _(website_languages_copyright or copyright) }}</p>
 				</div>
 			</div>
 		</div>

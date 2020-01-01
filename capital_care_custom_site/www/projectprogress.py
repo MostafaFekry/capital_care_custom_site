@@ -14,6 +14,7 @@ def get_context(context):
 	
 	context.title = context.details.title or "Project Progress"
 	context.main_section = context.details.main_section or ""
+	context.main_section_ar = context.details.main_section_ar or ""
 	context.light_description = context.details.light_description or ""
 	
 	if context.details.page_header_background:

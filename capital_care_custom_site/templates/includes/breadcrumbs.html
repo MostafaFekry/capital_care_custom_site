@@ -2,8 +2,8 @@
 <ul class="breadcrumb breadcrumb-light d-block text-center" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 	{%- set parents = parents[-3:] %}
 	{% for parent in parents %}
-	<li><a href="{{ url_prefix }}{{ parent.route | abs_url }}" itemprop="url">{{ parent.title or parent.label or parent.name or "" }}</a></li>
+	<li><a href="{{ url_prefix }}{{ parent.route | abs_url }}" itemprop="url">{{ _(parent.title or parent.label or parent.name or "") }}</a></li>
 	{% endfor %}
-	<li class="active"  aria-current="page">{{ title or "" }}</li>
+	<li class="active"  aria-current="page">{{ _(title or "") }}</li>
 </ul>
 {% endif %}

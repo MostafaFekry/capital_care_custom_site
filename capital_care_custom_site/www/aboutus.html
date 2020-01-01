@@ -21,13 +21,23 @@
 						</div>
 						<div class="row">
 							<div class="col-lg-12 mb-0">
-								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{{ doc.company_introduction or """<p>Some Introduction about your company that you would
+								<h4 class="text-color-quaternary appear-animation text-center" data-appear-animation="fadeInUp" data-appear-animation-delay="400">{% if website_languages_request == "ar" -%}
+								{{ doc.company_introduction_ar or doc.company_introduction or """<p>Some Introduction about your company that you would
 								like your website visitor to know.
 								More people than you think will read your About page.
 								People always like to know who the are doing business with.
 								Be authentic and avoid using jargon like 'value added services' etc.
 								Be sure to update your company history and
-								list of key team members in Website > About Us Settings</p>""" }}</h4>
+								list of key team members in Website > About Us Settings</p>""" }}
+								{%- else -%}
+								{{ doc.company_introduction or """<p>Some Introduction about your company that you would
+								like your website visitor to know.
+								More people than you think will read your About page.
+								People always like to know who the are doing business with.
+								Be authentic and avoid using jargon like 'value added services' etc.
+								Be sure to update your company history and
+								list of key team members in Website > About Us Settings</p>""" }}
+								{%- endif %}</h4>
 							</div>
 						</div>
 					</div>

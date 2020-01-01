@@ -23,6 +23,7 @@ class PropertyType(WebsiteGenerator):
 	
 	def get_context(self, context):
 		context.main_section = self.main_section
+		context.main_section_ar = self.main_section_ar
 		context.title = self.property_type_name
 		context.light_description = self.light_description or ""
 		
@@ -34,7 +35,7 @@ class PropertyType(WebsiteGenerator):
 		if self.property_model_item:
 		
 			property_model_items = frappe.db.sql("""\
-			select PM.property_model_name,PM.property_model_title, PM.description
+			select PM.property_model_name,PM.property_model_title, PM.description, PM.description_ar
 			from `tabProperty Model` PM
 			inner join `tabProperty Model Item` PMI on PMI.property_model = PM.property_model_name
 			where PMI.parent = '{property_type_name}' order by PMI.idx asc""".format(property_type_name=self.name), as_dict=1)
