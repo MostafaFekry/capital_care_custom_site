@@ -109,6 +109,7 @@ def get_list_context(context):
 	context.introduction = blog_settings.blog_introduction or ""
 	context.blog_settings = blog_settings
 	context.get_list = get_blog_list
+	
 	context.parents = [{"name": _("Home"), "route": "/"}]
 	
 	category = sanitize_html(frappe.local.form_dict.blog_category or frappe.local.form_dict.category)
