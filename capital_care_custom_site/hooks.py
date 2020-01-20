@@ -42,6 +42,10 @@ app_license = "MIT"
 #	"Role": "home_page"
 # }
 
+website_route_rules = [
+	{"from_route": "/blog/<category>", "to_route": "Website Blog Category"},
+]
+
 # Website user home page (by function)
 # get_website_user_home_page = "capital_care_custom_site.utils.get_home_page"
 
@@ -129,11 +133,9 @@ fixtures = [{"dt": "Custom Field", "filters": [["name", "in", [
 		"Lead-custom_interested_in",
 		"Lead-custom_address",
 		"Lead-custom_job",
+		"Website Slideshow Item-position",
 		"Website Slideshow Item-link_path"
 	]]]},
-    {"dt": "Web Form", "filters": [["name", "like", 
-        "broker-request"
-    ]]},
 	{"dt": "Translation"},
     {"dt": "Website Languages"},
     {"dt": "Web Page", "filters": [["name", "like", 

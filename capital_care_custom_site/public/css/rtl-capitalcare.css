@@ -5771,3 +5771,8 @@ html.boxed .body {
 	font-weight: 700 !important;
 	 font-size: 28px;
 }
+
+.sticky-wrapper.sticky-wrapper-transparent .sticky-body {
+	/* background: transparent; */
+	background-color: rgba(255, 255, 255, 0.8) !important;
+}

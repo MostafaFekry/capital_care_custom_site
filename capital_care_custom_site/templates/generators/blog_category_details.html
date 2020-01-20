@@ -1,0 +1,11 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ title or _("") }}{% endblock %}
+{% block header %}{{ title or _("") }}{% endblock %}
+{% block hero %}{% endblock %}
+
+{% block page_content %}
+{{ bio or _("This is bio") }}
+
+{% endblock %}
+

@@ -127,6 +127,32 @@ def get_data():
 			]
 		},
 		{
+			"label": _("Blog"),
+			"items": [
+				{
+					"type": "doctype",
+					"name": "Blog",
+					"description": _("Single Post (article)."),
+					"onboard": 1,
+				},
+				{
+					"type": "doctype",
+					"name": "Website Blogger",
+					"description": _("A user who posts blogs."),
+				},
+				{
+					"type": "doctype",
+					"name": "Website Blog Category",
+					"description": _("Categorize blog posts."),
+				},
+				{
+					"type": "doctype",
+					"name": "Website Blog Settings",
+					"description": _("Settings of blog posts."),
+				},
+			]
+		},
+		{
 			"label": _("Form"),
 			"items": [
 				{

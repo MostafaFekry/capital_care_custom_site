@@ -23,18 +23,54 @@
 						data-bgparallax="0"
 						{%- endif %}	
 						class="rev-slidebg">
-					{% if slide.link_path %}
-					<a class="tp-caption slider-scroll-button slider-scroll-button"
-						data-hash
-						data-hash-offset="0"
-						href="{{ slide.link_path }}"
-						data-x="center"
-						data-y="bottom" data-voffset="['30','30','30','30']"
-						data-start="1600"					 
-						data-transform_in="y:[100%];s:500;"
-						data-transform_out="y:[100%];opacity:0;s:500;"
-						data-mask_in="x:0px;y:0px;" style="z-index: 5;"></a>
-					{% endif %}
+						{% if slide.heading %}
+						<h1 class="tp-caption tp-caption-overlay-opacity main-label"
+							data-frames='[{"delay":1000,"speed":1000,"sfxcolor":"#212529","sfx_effect":"blockfrom{% if website_languages_request == 'en'%}left{%- else -%}right{%- endif %}","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"sfxcolor":"#212529","sfx_effect":"blockto{% if website_languages_request == 'en'%}left{%- else -%}right{%- endif %}","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
+							data-x='{% if website_languages_request == "en"%}left{%- else -%}right{%- endif %}' {% if slide.position == "Left" %}data-hoffset="['0','30','30','30']"{% else %}data-hoffset="['550','550','550','450']"{% endif %}
+							data-y="center" data-voffset="['-65','-65','-69','-73']"
+							data-fontsize="['50','50','50','60']"
+							data-letterspacing="0"
+							data-paddingtop="['10','10','10','12']"
+							data-paddingbottom="['10','10','10','12']"
+							data-paddingleft="['18','18','18','18']"
+							data-paddingright="['18','18','18','18']">{{ _(slide.heading) }}</h1>
+						{% endif %}
+						{% if slide.description %}
+						<div class="tp-caption tp-caption-overlay-opacity top-label font-weight-semibold"
+							data-frames='[{"delay":1300,"speed":1000,"sfxcolor":"#212529","sfx_effect":"blockfrom{% if website_languages_request == 'en'%}left{%- else -%}right{%- endif %}","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"sfxcolor":"#212529","sfx_effect":"blockto{% if website_languages_request == 'en'%}left{%- else -%}right{%- endif %}","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
+							data-x='{% if website_languages_request == "en"%}left{%- else -%}right{%- endif %}' {% if slide.position == "Left" %}data-hoffset="['0','30','30','30']"{% else %}data-hoffset="['550','550','550','450']"{% endif %}
+							data-y="center"
+							data-fontsize="['18','18','18','30']"
+							data-paddingtop="['10','10','10','10']"
+							data-paddingbottom="['10','10','10','10']"
+							data-paddingleft="['18','18','18','18']"
+							data-paddingright="['18','18','18','18']" style="color: #e0e0e0;">{{ _(slide.description) }}</div>
+						{% endif %}
+						{% if slide.link_path and slide.heading %}
+						<a class="tp-caption btn btn-secondary font-weight-bold"
+							href="{{ slide.link_path }}"
+							data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+							data-x='{% if website_languages_request == "en"%}left{%- else -%}right{%- endif %}' {% if slide.position == "Left" %}data-hoffset="['3','35','35','35']"{% else %}data-hoffset="['550','550','550','450']"{% endif %}
+							data-y="center" {% if slide.position == "Left" %}data-voffset="['65','65','65','95']"{% else %}data-voffset="['65','65','65','105']"{% endif %}
+							data-paddingtop="['15','15','15','30']"
+							data-paddingbottom="['15','15','15','30']"
+							data-paddingleft="['40','40','40','50']"
+							data-paddingright="['40','40','40','50']"
+							data-fontsize="['13','13','13','25']"
+							data-lineheight="['20','20','20','25']">{{ _("LEARN MORE") }}</a>
+						{% endif %}
+						{% if slide.link_path %}
+						<a class="tp-caption slider-scroll-button slider-scroll-button"
+							data-hash
+							data-hash-offset="0"
+							href="{{ slide.link_path }}"
+							data-x="center"
+							data-y="bottom" data-voffset="['30','30','30','30']"
+							data-start="1600"					 
+							data-transform_in="y:[100%];s:500;"
+							data-transform_out="y:[100%];opacity:0;s:500;"
+							data-mask_in="x:0px;y:0px;" style="z-index: 5;"></a>
+						{% endif %}
 					</li>
 				{% endfor %}
 			</ul>

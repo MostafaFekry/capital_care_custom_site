@@ -1,0 +1,68 @@
+{
+ "creation": "2020-01-19 15:01:04.705075",
+ "description": "Blog Settings",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "blog_title",
+  "blog_introduction",
+  "writers_introduction",
+  "number_column_in_row"
+ ],
+ "fields": [
+  {
+   "fieldname": "blog_title",
+   "fieldtype": "Data",
+   "label": "Blog Title"
+  },
+  {
+   "fieldname": "blog_introduction",
+   "fieldtype": "Small Text",
+   "label": "Blog Introduction",
+   "translatable": 1
+  },
+  {
+   "fieldname": "writers_introduction",
+   "fieldtype": "Small Text",
+   "label": "Writers Introduction",
+   "translatable": 1
+  },
+  {
+   "default": "3",
+   "fieldname": "number_column_in_row",
+   "fieldtype": "Int",
+   "label": "Number column in Row"
+  }
+ ],
+ "icon": "fa fa-cog",
+ "issingle": 1,
+ "modified": "2020-01-20 01:23:45.571573",
+ "modified_by": "Administrator",
+ "module": "Capital Care Custom Site",
+ "name": "Website Blog Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
