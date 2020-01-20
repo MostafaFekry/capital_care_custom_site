@@ -54,9 +54,6 @@
 				{{ render_item(item, parent=True) }}
 			{%- endif -%}
 		{%- endfor %}
-	{%- endif %}
-	{% if enable_multilanguage_support and display_language_picker_in_top_bar -%}
-		{% include "templates/includes/navbar/dropdown_Language.html" %}
 	{%- endif %}	
 	</ul>
 			

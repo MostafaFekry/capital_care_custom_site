@@ -36,8 +36,8 @@
 										<h1 class="mb-3" itemprop="headline">{{ _(title) }}</h1>
 
 										<div class="post-meta">
-											<span><i class="far fa-user"></i> {{ _("By") }} <a href='/{{ blogger_info.route or "#" }}'>{{ _(blogger_info.full_name) }}</a> </span>
-											<!--<span><i class="far fa-folder"></i> <a href="{{ category.route }}">{{ _(category.title) }}</a> </span>-->
+											{% if blog_settings.allow_display_author_info %}<span><i class="far fa-user"></i> {{ _("By") }} <a href='/{{ blogger_info.route or "#" }}'>{{ _(blogger_info.full_name) }}</a> </span>{% endif %}
+											{% if blog_settings.allow_display_category_info %}<span><i class="far fa-folder"></i> <a href="/{{ category.route }}">{{ _(category.title) }}</a> </span>{% endif %}&nbsp;
 										</div>
 
 										<img src="{{ cover_image }}" class='img-fluid float-right mb-3 mb-1 {% if website_languages_request == "ar"%}mr-sm-4 mr-lg-5 {%- else -%}ml-sm-4 ml-lg-5{%- endif %}ml-sm-4 ml-lg-5' alt="" style="width: 360px;">
@@ -47,7 +47,8 @@
 										<div itemprop="articleBody" class="longform blog-text mt-5">
 										{{ _(content) }}
 										</div>
-
+										
+										{% if blog_settings.allow_display_author_info %}
 										<div class="post-block post-author mt-4 clearfix">
 											<h4 class="mt-4 mb-3">{{ _("Author") }}</h4>
 											{% if blogger_info.avatar %}
@@ -57,11 +58,12 @@
 												</a>
 											</div>
 											{% endif %}
-											<p><strong class="name mb-3"><a href='{{ blogger_info.route or "#" }}'>{{ _(blogger_info.full_name) }}</a></strong></p>
+											<p><strong class="name mb-3"><a href='/{{ blogger_info.route or "#" }}'>{{ _(blogger_info.full_name) }}</a></strong></p>
 											{% if blogger_info.bio %}
 											<p class="text-muted mt-1">{{ blogger_info.bio }}</p>
 											{% endif %}
 										</div>
+										{% endif %}
 										{% if enable_comments %}
 										<div class="blog-comments my-5">
 											{% include 'templates/includes/comments/comments.html' %}

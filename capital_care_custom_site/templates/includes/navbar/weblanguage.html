@@ -2,8 +2,9 @@
 	{%- for page in website_languages_items -%}
 		{% if page.language == website_languages_request -%}
 		{%- else -%}
-		<li class="nav-item nav-item-left-border mr-4 ml-4">
-			<a class="text-decoration-none text-color-quaternary" href='/{{ page.language }}/{{ path }}'><span class="ws-nowrap text-4 letter-spacing-minus-1"><i class="fas fa-globe"></i>  {{ page.language_name }}</span></a>
+		<li class="nav-item nav-item-left-border mr-lg-4 ml-lg-4 ">
+			<a class="text-decoration-none text-color-quaternary d-none d-lg-block d-md-block  d-sm-block" href='/{{ page.language }}/{{ path }}'><span class="ws-nowrap text-4 letter-spacing-minus-1"><i class="fas fa-globe"></i>  {{ page.language_name }}</span></a>
+			<a class="text-decoration-none text-color-quaternary text-uppercase  d-block d-lg-none d-md-none  d-sm-none" href='/{{ page.language }}/{{ path }}' ><span class="ws-nowrap text-4 letter-spacing-minus-1"><i class="fas fa-globe"></i>  {{ page.language }}</span></a>
 		</li>
 		{%- endif %}
 	{%- endfor %}

@@ -12,14 +12,14 @@
 				</div>
 				<div class="col-auto text-right d-flex align-items-center justify-content-end">
 					
-					<div class="header-row text-color-secondary d-none d-lg-block d-md-block  d-sm-block">
+					<div class="header-row text-color-secondary">
 						<nav class="header-nav-top mr-2">
 							<ul class="nav nav-pills">
 								{% if enable_multilanguage_support and display_language_picker_in_top_bar -%}
 									{% include "templates/includes/navbar/weblanguage.html" %}
 								{%- endif %}
 								{% if hotline_details %}
-								<li class="nav-item nav-item-left-border">
+								<li class="nav-item nav-item-left-border d-none d-lg-block d-md-block  d-sm-block">
 									<a class="text-decoration-none" href='tel: {{ hotline_details or "" }}'><span class="ws-nowrap text-6  font-weight-black letter-spacing-minus-1"><i class="fas fa-phone"></i>  {{ hotline_details or "" }}</span></a>
 								</li>
 								{%- endif %}

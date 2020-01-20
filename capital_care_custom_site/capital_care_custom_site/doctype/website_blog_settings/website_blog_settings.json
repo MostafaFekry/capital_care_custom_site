@@ -7,7 +7,9 @@
   "blog_title",
   "blog_introduction",
   "writers_introduction",
-  "number_column_in_row"
+  "number_column_in_row",
+  "allow_display_author_info",
+  "allow_display_category_info"
  ],
  "fields": [
   {
@@ -30,13 +32,26 @@
   {
    "default": "3",
    "fieldname": "number_column_in_row",
-   "fieldtype": "Int",
-   "label": "Number column in Row"
+   "fieldtype": "Select",
+   "label": "Number column in Row",
+   "options": "2\n3\n4"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_display_author_info",
+   "fieldtype": "Check",
+   "label": "Allow Display Author Info"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_display_category_info",
+   "fieldtype": "Check",
+   "label": "Allow Display Category Info"
   }
  ],
  "icon": "fa fa-cog",
  "issingle": 1,
- "modified": "2020-01-20 01:23:45.571573",
+ "modified": "2020-01-20 18:14:21.965036",
  "modified_by": "Administrator",
  "module": "Capital Care Custom Site",
  "name": "Website Blog Settings",

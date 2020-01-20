@@ -87,6 +87,9 @@ class Blog(WebsiteGenerator):
 		context.slideshow = self.slideshow
 		if self.slideshow:
 			context.update(get_slideshow(self))
+		
+		blog_settings = frappe.get_doc("Website Blog Settings", "Website Blog Settings")
+		context.blog_settings = blog_settings
 
 	def load_comments(self, context):
 		context.comment_list = get_comment_list(self.doctype, self.name)
@@ -104,6 +107,7 @@ def get_list_context(context):
 	blog_settings = frappe.get_doc("Website Blog Settings", "Website Blog Settings")
 	
 	context.introduction = blog_settings.blog_introduction or ""
+	context.blog_settings = blog_settings
 	context.get_list = get_blog_list
 	context.parents = [{"name": _("Home"), "route": "/"}]
 	
